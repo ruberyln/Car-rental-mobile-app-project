@@ -9,7 +9,12 @@ export default function App() {
   
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Calendar/>
+      {/* <Product2/> */}
+      <Product/>
+     {/* <Summary/>*/}
+     {/* <Calendar/> */}
+      
+      
     
     </View>
   );

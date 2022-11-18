@@ -1,10 +1,12 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, ScrollView, Button } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity, onPress } from 'react-native';
 
 
-const Product = () => {
+const Product2 = () => {
     return (
         <View style={styles.container}>
+              <Image style={styles.icon}
+                    source={require('./src/left.png')} />
             <View style={styles.text1}>
                 <Text style={styles.productext}> Ferarri </Text>
             </View>
@@ -77,7 +79,9 @@ const Product = () => {
                     <View style={{ flexDirection: "row", paddingTop:10, }} >
                         <Image style={styles.icons}
                             source={require('./src/location.png')} />
+                            <TouchableOpacity>
                         <Text style={styles.normaltext}> 2409 Dewdney Avenue Regina,SK. </Text>
+                        </TouchableOpacity>
                     </View>
 
                     <View style= {styles.container2}>
@@ -85,13 +89,17 @@ const Product = () => {
                         <Text style={styles.text2}> $180/day </Text>
                   
 
-                     <View style ={styles.button}>
-                        <Button 
-                        title = "BOOK NOW"
-                        color= "#617EE4"
-                        />
+                     <View style = {styles.button}>
+                       
+                      <TouchableOpacity style ={ styles.box2}>
+
+                       <Text style = {styles.text}> Book Now</Text>
+                       </TouchableOpacity>
+
                         </View>
+
                         </View>
+                        
                 </View>
 
             </View>
@@ -123,15 +131,22 @@ const styles =
            
             width :300,
             height:65,
-            alignItems: 'center',
             flexDirection:"row-reverse",
+            alignItems: 'center',
             borderBottomEndRadius: 10,
             borderBottomLeftRadius: 20,
             borderBottomRightRadius: 20,
             borderTopLeftRadius: 20,
             borderTopRightRadius: 20,
-
+            paddingHorizontal: 3,
+            borderRadius: 20,
+            fontFamily :"serif",
+            fontSize :20,
+        
         },
+            
+
+    
         text2: {
             fontWeight: 'bold',
             fontSize: 20,
@@ -168,6 +183,30 @@ const styles =
             borderTopRightRadius: 10,
             flexDirection: "column",
         },
+        box2: {
+            backgroundColor: "#617EE4",
+            //padding: 1,
+           // marginVertical: 20,
+            marginHorizontal: -50,
+            width: 248,
+            height: 65,
+            borderBottomEndRadius: 20,
+            borderBottomLeftRadius: 20,
+            borderBottomRightRadius: 20,
+            borderTopLeftRadius: 20,
+            borderTopRightRadius: 20,
+            flexDirection: "row-reverse",
+            alignItems:"center",
+            justifyContent:"center",
+        },
+        text:{
+            alignItems:"center",
+            justifyContent:"center",
+            color: "#ffffff",
+            fontFamily:"serif",
+            fontSize:20,
+            fontWeight:"bold",
+              },
         text1:
         {
             paddingTop: 100,
@@ -195,6 +234,13 @@ const styles =
             marginLeft: 25,
 
         },
+        icon: {
+           // paddingTop: 10,
+            width:25,
+            height:25,
+            //flex:1,
+            //marginTop:,
+        },
         images:
         {
             width: 378,
@@ -209,4 +255,4 @@ const styles =
         }
     })
 
-export default Product;
+export default Product2;

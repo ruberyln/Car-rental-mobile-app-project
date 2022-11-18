@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, ScrollView, Button, Alert, TouchableOpacity, onPress } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView, Button, Alert, TouchableOpacity, onPress, TouchableOpacityComponent } from 'react-native';
 
 
 const Product2 = () => {
@@ -79,7 +79,9 @@ const Product2 = () => {
                     <View style={{ flexDirection: "row", paddingTop:10, }} >
                         <Image style={styles.icons}
                             source={require('./src/location.png')} />
+                            <TouchableOpacity>
                         <Text style={styles.normaltext}> 2409 Dewdney Avenue Regina,SK. </Text>
+                        </TouchableOpacity>
                     </View>
 
                     <View style= {styles.container2}>
@@ -89,13 +91,11 @@ const Product2 = () => {
 
                      <View style = {styles.button}>
                        
-                        <Button
-                        title = "BOOK NOW"
-                        backgroundcolor= "#617EE4"
-                        
-                        onPress={() => Alert.alert('Button was just pressed')}
-                        />
-                       
+                      <TouchableOpacity style ={ styles.box2}>
+
+                       <Text style = {styles.text}> Book Now</Text>
+                       </TouchableOpacity>
+
                         </View>
 
                         </View>
@@ -183,6 +183,30 @@ const styles =
             borderTopRightRadius: 10,
             flexDirection: "column",
         },
+        box2: {
+            backgroundColor: "#617EE4",
+            //padding: 1,
+           // marginVertical: 20,
+            marginHorizontal: -50,
+            width: 248,
+            height: 65,
+            borderBottomEndRadius: 20,
+            borderBottomLeftRadius: 20,
+            borderBottomRightRadius: 20,
+            borderTopLeftRadius: 20,
+            borderTopRightRadius: 20,
+            flexDirection: "row-reverse",
+            alignItems:"center",
+            justifyContent:"center",
+        },
+        text:{
+            alignItems:"center",
+            justifyContent:"center",
+            color: "#ffffff",
+            fontFamily:"serif",
+            fontSize:20,
+            fontWeight:"bold",
+              },
         text1:
         {
             paddingTop: 100,
