@@ -1,17 +1,19 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, ScrollView, Button } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView, Button, Alert, TouchableOpacity, onPress } from 'react-native';
 
 
-const Product = () => {
+const Product2 = () => {
     return (
         <View style={styles.container}>
+              <Image style={styles.icon}
+                    source={require('./src/left.png')} />
             <View style={styles.text1}>
                 <Text style={styles.productext}> Ferarri </Text>
             </View>
             <View >
 
                 <Image style={styles.images}
-                    source={require('./src/f.png')} />
+                    source={require('./src/ferrari2.png')} />
                 {/* <Image style = {styles.dot}
                  source= {require('./dots.png')}/> */}
 
@@ -85,13 +87,19 @@ const Product = () => {
                         <Text style={styles.text2}> $180/day </Text>
                   
 
-                     <View style ={styles.button}>
-                        <Button 
+                     <View style = {styles.button}>
+                       
+                        <Button
                         title = "BOOK NOW"
-                        color= "#617EE4"
+                        backgroundcolor= "#617EE4"
+                        
+                        onPress={() => Alert.alert('Button was just pressed')}
                         />
+                       
                         </View>
+
                         </View>
+                        
                 </View>
 
             </View>
@@ -121,16 +129,24 @@ const styles =
         },
         button: {
            
-            width :248,
+            width :300,
             height:65,
             flexDirection:"row-reverse",
+            alignItems: 'center',
             borderBottomEndRadius: 10,
             borderBottomLeftRadius: 20,
             borderBottomRightRadius: 20,
             borderTopLeftRadius: 20,
             borderTopRightRadius: 20,
-
+            paddingHorizontal: 3,
+            borderRadius: 20,
+            fontFamily :"serif",
+            fontSize :20,
+        
         },
+            
+
+    
         text2: {
             fontWeight: 'bold',
             fontSize: 20,
@@ -194,6 +210,13 @@ const styles =
             marginLeft: 25,
 
         },
+        icon: {
+           // paddingTop: 10,
+            width:25,
+            height:25,
+            //flex:1,
+            //marginTop:,
+        },
         images:
         {
             width: 378,
@@ -208,4 +231,4 @@ const styles =
         }
     })
 
-export default Product;
+export default Product2;

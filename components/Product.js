@@ -121,8 +121,9 @@ const styles =
         },
         button: {
            
-            width :248,
+            width :300,
             height:65,
+            alignItems: 'center',
             flexDirection:"row-reverse",
             borderBottomEndRadius: 10,
             borderBottomLeftRadius: 20,
