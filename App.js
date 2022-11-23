@@ -8,6 +8,7 @@ import SignIn from './components/SignIn';
 import Welcome from './components/Welcome';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Display from './components/Display'
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           options={{ title: 'Home screen' }}
         />
         <Stack.Screen name="Welcome" component={Welcome} />
+        <Stack.Screen name="Display" component={Display} />
       </Stack.Navigator>
     </NavigationContainer>
       {/* <Product2/> */}
