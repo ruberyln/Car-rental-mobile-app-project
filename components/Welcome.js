@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Button, TouchableOpacity, Image } from 'react-n
 import React from 'react'
 
 const Welcome = ({ navigation }) => {
+
   return (
 
     <View style={styles.container}>
@@ -32,7 +33,10 @@ const Welcome = ({ navigation }) => {
         <Text style={styles.Text}>Pay</Text>
         </View>
 
-        <TouchableOpacity style={styles.button}  >
+
+        <TouchableOpacity style={styles.button}
+        onPress={() => navigation.navigate('Display')} >
+
           <Text style={styles.buttontxt}>Let's Go</Text>
         </TouchableOpacity>
 
@@ -134,7 +138,7 @@ const styles = StyleSheet.create({
   },
 
   buttontxt: {
-    fontSize: 50,
+    fontSize: 30,
     textAlign:'center',
     justifyContent:'center',
     color: '#fff'
