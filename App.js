@@ -11,9 +11,9 @@ export default function App() {
       <StatusBar style="auto" />
       {/* <Product2/> */}
       <Product/>
-     {/* <Summary/>*/}
-     {/* <Calendar/> */}
-      
+     {/* <Summary/> */}
+     {/* <Calendar/>
+       */}
       
     
     </View>

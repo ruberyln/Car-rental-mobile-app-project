@@ -215,16 +215,7 @@ const styles =
             fontSize: 20,
             fontFamily: 'serif',
         },
-        scrollview:
-        {
-            //width:"100%",
-            //height:"80%",
-            //alignItems:'center',
-            // marginTop : 15,
-            // marginRight:20,
-            //marginLeft :15,
-
-        },
+       
         icons: {
             width: 25,
             height: 25,
