@@ -12,7 +12,7 @@ export default function App() {
       <StatusBar style="auto" />
       {/* <Product2/> */}
       {/* <Product/> */}
-      <SignIn/>
+      {/* <SignIn/> */}
      {/* <Summary/> */}
      {/* <Calendar/>
        */}
