@@ -134,8 +134,9 @@ const styles = StyleSheet.create({
   },
 
   buttontxt: {
-    fontSize: 30,
+    fontSize: 50,
     textAlign:'center',
+    justifyContent:'center',
     color: '#fff'
   },
 
