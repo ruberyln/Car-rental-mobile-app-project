@@ -4,13 +4,15 @@ import Product from './components/Product';
 import Product2 from './components/Product2';
 import Summary from './components/Summary';
 import Calendar from './components/Calendar';
+import SignIn from './components/SignIn'
 export default function App() {
   return (
   
     <View style={styles.container}>
       <StatusBar style="auto" />
       {/* <Product2/> */}
-      <Product/>
+      {/* <Product/> */}
+      <SignIn/>
      {/* <Summary/> */}
      {/* <Calendar/>
        */}

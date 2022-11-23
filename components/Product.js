@@ -140,7 +140,7 @@ const styles =
             borderTopRightRadius: 20,
             paddingHorizontal: 3,
             borderRadius: 20,
-            fontFamily :"serif",
+            fontFamily :"Serif",
             fontSize :20,
         
         },

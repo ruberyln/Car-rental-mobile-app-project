@@ -46,7 +46,7 @@ const SignIn = () => {
         </TouchableOpacity>
    
         <TouchableOpacity style={styles.loginBtn}>
-          <Text style={styles.loginText}>LOGIN</Text>
+          <Text>LOGIN</Text>
         </TouchableOpacity>
       </View>
     );
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
       backgroundColor: "#ffffff",
       borderRadius: 10,
       borderWidth: 1,
-      width: "70%",
+      width:100,
       height: 45,
       marginBottom: 20,
    
