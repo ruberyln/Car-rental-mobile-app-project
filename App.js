@@ -6,6 +6,7 @@ import Summary from './components/Summary';
 import Calendar from './components/Calendar';
 import SignIn from './components/SignIn';
 import Welcome from './components/Welcome';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
@@ -21,6 +22,8 @@ export default function App() {
           options={{ title: 'Home screen' }}
         />
         <Stack.Screen name="Welcome" component={Welcome} />
+       
+       
       </Stack.Navigator>
     </NavigationContainer>
       {/* <Product2/> */}
