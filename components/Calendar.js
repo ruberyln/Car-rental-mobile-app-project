@@ -1,4 +1,3 @@
-
 import React, {useState} from 'react';
  
 // import all the components we are going to use
@@ -138,4 +137,3 @@ fontWeight:"bold",
   });
 
 export default Calendar;
- 
