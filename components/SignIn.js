@@ -11,7 +11,7 @@ import {
   Linking,
 } from "react-native";
 
-const SignIn = () => {
+const SignIn = ({ navigation }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
    
@@ -45,7 +45,7 @@ const SignIn = () => {
           <Text style={styles.forgot_button}>"Don't have an account? Sign Up"</Text>
         </TouchableOpacity>
    
-        <TouchableOpacity style={styles.loginBtn}>
+        <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Welcome')}>
           <Text>LOGIN</Text>
         </TouchableOpacity>
       </View>
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
       backgroundColor: "#ffffff",
       borderRadius: 10,
       borderWidth: 1,
-      width:100,
+      width:"80%",
       height: 45,
       marginBottom: 20,
    
