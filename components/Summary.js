@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet,TouchableOpacity } from 'react-native';
 
 
-const Summary = () => {
+const Summary = ({navigation}) => {
     return (
         <View style= {styles.container}>
             <Text style = {styles.text}> Order Summary</Text>
@@ -45,6 +45,10 @@ const Summary = () => {
                     Total:
                 </Text>
             </View>
+            <TouchableOpacity style={styles.box2}
+            onPress={() => navigation.navigate('PaymentOptions')} >
+          <Text style={styles.buttontxt}>Pay Now</Text>
+      </TouchableOpacity>
         </View>
 </View>
     )
@@ -67,6 +71,13 @@ alignItems:"center"
             //marginRight:25,
            // marginLeft: 25,
             
+        },
+        buttontxt:{
+            buttontxt: {
+                fontSize: 30,
+                textAlign:'center',
+                color: '#fff'
+              },
         },
 
         text: {
@@ -95,8 +106,22 @@ alignItems:"center"
 
 
         },
-
-
+        box2: {
+            borderRadius: 15,
+            backgroundColor: "#617ee4",
+            width: 310,
+            alignItems:'center',
+            justifyContent:'center',
+            height: 60,
+            marginVertical:200,
+          },
+    
+          buttontxt: {
+            fontSize: 20,
+            textAlign:'center',
+            color: '#fff',
+            //fontWeight:"bold",
+          },
 
 
     })

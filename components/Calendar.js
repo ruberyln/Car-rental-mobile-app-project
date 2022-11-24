@@ -6,7 +6,7 @@ import {SafeAreaView, StyleSheet, View, Text, TouchableOpacity} from 'react-nati
 //import CalendarPicker from the package we installed
 import CalendarPicker from 'react-native-calendar-picker';
  
-const Calendar = () => {
+const Calendar = ({navigation}) => {
   const [selectedStartDate, setSelectedStartDate] = useState(null);
   const [selectedEndDate, setSelectedEndDate] = useState(null);
  
@@ -82,7 +82,8 @@ const Calendar = () => {
         </View>
       </View>
 
-      <TouchableOpacity style = {styles.box} >
+      <TouchableOpacity style = {styles.box}
+       onPress={() => navigation.navigate('Summary')} >
        <Text style = {styles.text}> Continue </Text>
       </TouchableOpacity>
     </SafeAreaView>

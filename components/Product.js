@@ -2,11 +2,10 @@ import React from "react";
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity, onPress } from 'react-native';
 
 
-const Product2 = () => {
+const Product2 = ({navigation}) => {
     return (
         <View style={styles.container}>
-              <Image style={styles.icon}
-                    source={require('./src/left.png')} />
+
             <View style={styles.text1}>
                 <Text style={styles.productext}> Ferarri </Text>
             </View>
@@ -91,7 +90,8 @@ const Product2 = () => {
 
                      <View style = {styles.button}>
                        
-                      <TouchableOpacity style ={ styles.box2}>
+                      <TouchableOpacity style ={ styles.box2}
+                      onPress={() => navigation.navigate('Calendar')}>
 
                        <Text style = {styles.text}> Book Now</Text>
                        </TouchableOpacity>

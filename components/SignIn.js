@@ -40,7 +40,7 @@ const SignIn = ({ navigation }) => {
           />
         </View>
    
-        <TouchableOpacity onPress={() => Linking.openURL('http://google.com')}>
+        <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
          
           <Text style={styles.forgot_button}>"Don't have an account? Sign Up"</Text>
         </TouchableOpacity>

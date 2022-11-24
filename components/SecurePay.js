@@ -5,9 +5,7 @@ const SecurePay = () => {
   return (
     <View style={styles.container}>
       <View style={styles.head}>
-      <TouchableOpacity>
-        <Image source={require("../assets/back.png")} style={styles.back} />
-      </TouchableOpacity>
+      
       <Text style={styles.txt}>Secure Payment</Text>
       <Image source={require("../assets/secure.jpg")} style={styles.Img}></Image>
       </View>
@@ -69,17 +67,20 @@ const styles = StyleSheet.create({
         flex: 2,
         backgroundColor: "#fff",
         alignItems:'center',
-        justifyContent:'center'
+        justifyContent:'center',
+
+
     },
 
     card: {
         borderRadius: 15,
-        padding: 10,
+        padding: 15,
         margin: 10,
         backgroundColor: "#fff",
         borderStyle: "solid",
         borderColor: "rgba(0, 0, 0, 0.2)",
         borderWidth: 1,
+       
         // width: 400,
         // height: 300
     },
@@ -92,16 +93,16 @@ const styles = StyleSheet.create({
     },
 
     ctxt: {
-      fontSize: 20,
+      fontSize: 15,
     },
 
     cvtxt: {
-      fontSize: 20,
+      fontSize: 15,
       marginRight: 85
     },
 
     datetxt: {
-      fontSize: 20
+      fontSize: 15
     },
 
     parent: {

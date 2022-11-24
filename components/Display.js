@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity, ImageBackground, ScrollView, FlatList } from 'react-native'
 import React,{ useState } from 'react'
 
-const Display = () => {
+const Display = ({navigation}) => {
 
   const [carList, setcarList] = useState([
     {val: 'Lamborghini 2020', src: require("../assets/car.png"), rate: '$180/day', key: '1'},
@@ -15,15 +15,20 @@ const Display = () => {
   ]);
 
   const renderItem = ({ item, index, separators }) => (
+    <TouchableOpacity onPress={() => navigation.navigate('Product')}>
     <View style={styles.card}>
+
         <ImageBackground source={item.src} style={styles.carimg}>
         <Text style={styles.title}>{item.val}</Text>
-        <TouchableOpacity style={styles.vbutton}>
+
+        <TouchableOpacity style={styles.vbutton}
+        onPress={() => navigation.navigate('Product')}>
           <Text style={styles.vbuttontxt}>View</Text>
         </TouchableOpacity>
         <Text style={styles.rate}>{item.rate}</Text>
         </ImageBackground>
     </View>
+    </TouchableOpacity>
   )
 
   return (
@@ -32,25 +37,7 @@ const Display = () => {
       <View style={styles.header}>
 
       <TextInput style={styles.input} keyboardType='default' placeholder='Search' />
-      <TouchableOpacity>
-      <Image source={require("../assets/back.png")} style={styles.Img}></Image>
-      </TouchableOpacity>
-
-      <View style={styles.scroll}>
-
-      <View style={styles.rect1}>
-      <Text style={styles.txt}>Family brands</Text>
-      </View>
-
-      <View style={styles.rect2}>
-      <Text style={styles.txt}>Luxury brands</Text>
-      </View>
-
-      <View style={styles.rect3}>
-        <Text style={styles.txt}>Popular brands</Text>
-      </View>
-
-      </View>
+    
 
       </View>
 
@@ -70,9 +57,25 @@ const Display = () => {
 
       <View style={styles.footer}>
 
-      <TouchableOpacity style={styles.tabs}>
+      <View style={styles.scroll}>
+
+<View style={styles.rect1}>
+<Text style={styles.txt}>Family brands</Text>
+</View>
+
+<View style={styles.rect2}>
+<Text style={styles.txt}>Luxury brands</Text>
+</View>
+
+<View style={styles.rect3}>
+  <Text style={styles.txt}>Popular brands</Text>
+</View>
+
+</View>
+
+      {/* <TouchableOpacity style={styles.tabs}>
       <Image source={require("../assets/home.png")} style={styles.icon}></Image>
-      <Text style={styles.ttitle}>Homee</Text>
+      <Text style={styles.ttitle}>Home</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.tabs}>
@@ -88,7 +91,7 @@ const Display = () => {
       <TouchableOpacity style={styles.tabs}>
       <Image source={require("../assets/profile.png")} style={styles.icon}></Image>
       <Text style={styles.ttitle}>Profile</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
       </View>
 
@@ -139,6 +142,7 @@ const styles = StyleSheet.create({
       borderStyle: "solid",
       borderColor: "rgba(0, 0, 0, 0.4)",
       borderWidth: 1,
+      margin: 5,
       width: 120,
       height: 30,
       alignItems:'center',
@@ -147,6 +151,7 @@ const styles = StyleSheet.create({
 
     rect2: {
       borderRadius: 5,
+      margin: 5,
       backgroundColor: "#617ee4",
       borderStyle: "solid",
       borderColor: "rgba(0, 0, 0, 0.4)",
@@ -160,6 +165,7 @@ const styles = StyleSheet.create({
     rect3: {
       borderRadius: 5,
       backgroundColor: "#f6f5cd",
+      margin: 5,
       borderStyle: "solid",
       borderColor: "rgba(0, 0, 0, 0.4)",
       borderWidth: 1,
@@ -170,18 +176,18 @@ const styles = StyleSheet.create({
     },
 
     txt: {
-      fontSize: 15,
-      fontWeight: "700",
+      fontSize: 10,
+      fontWeight: "300",
       color: "#000",
       textAlign: "center",
 
     },
 
     body: {
-      flex: 3,
+      flex: 10,
       alignItems:'center',
       justifyContent:'center',
-      borderWidth: 0.2
+      // borderWidth:
     },
 
     footer: {
@@ -205,7 +211,7 @@ const styles = StyleSheet.create({
     },
 
     title: {
-      fontSize: 20,
+      fontSize: 15,
     },
 
     carimg: {
@@ -240,9 +246,9 @@ const styles = StyleSheet.create({
     },
 
     icon: {
-      width: 35,
+      width: 25,
       margin: 5,
-      height: 35,
+      height: 25,
       padding: 5
     },
 
@@ -254,6 +260,6 @@ const styles = StyleSheet.create({
     },
 
     ttitle: {
-      fontSize: 18
+      fontSize: 15
     }
 })

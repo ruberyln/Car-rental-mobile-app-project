@@ -1,15 +1,13 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image, Pressable } from 'react-native'
 import React from 'react'
-
-const PaymentOptions = () => {
+import SecurePay from './SecurePay'
+const PaymentOptions = ({navigation}) => {
   return (
     <View style={styles.container}>
         
         <View style={styles.header}>
         
-        <TouchableOpacity>
-        <Image source={require("../assets/back.png")} style={styles.Img} />
-        </TouchableOpacity>
+      
         <Text style={styles.txt}>Payment Options</Text>
         <Text style={styles.txt2}>Choose most suitable payment option</Text>
 
@@ -41,7 +39,8 @@ const PaymentOptions = () => {
         </View>
       
         <View style={styles.footer}>
-        <TouchableOpacity style={styles.button} >
+        <TouchableOpacity style={styles.button}
+         onPress={() => navigation.navigate('SecurePay')}>
           <Text style={styles.buttontxt}>Proceed To Payment</Text>
         </TouchableOpacity>    
         </View>
@@ -66,20 +65,21 @@ const styles = StyleSheet.create({
         textAlign:'center',
         padding: 5,
         top: 5,
-        fontSize: 30
+        fontSize: 25,
+        fontWeight:"bold"
     },
 
     txt2: {
         textAlign:'center',
         padding: 5,
         top: 5,
-        fontSize: 20
+        fontSize: 18
     },
 
     Img: {
-        width: 30,
+        width: 25,
         margin: 5,
-        height: 30,
+        height: 25,
         right: 175
       },
     
@@ -116,14 +116,14 @@ const styles = StyleSheet.create({
       },
 
     buttontxt: {
-        fontSize: 30,
+        fontSize: 20,
         textAlign:'center',
         color: '#fff'
       },
 
     otxt: {
         left: 20,
-        fontSize: 24,
+        fontSize: 15,
         textAlign: "center",
 
     },
@@ -140,8 +140,8 @@ const styles = StyleSheet.create({
     },
 
     logo: {
-        width: 35,
-        height: 35
+        width: 32,
+        height: 25
     }
   
 })
