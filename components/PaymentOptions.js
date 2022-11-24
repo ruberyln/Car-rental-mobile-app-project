@@ -118,7 +118,8 @@ const styles = StyleSheet.create({
     buttontxt: {
         fontSize: 20,
         textAlign:'center',
-        color: '#fff'
+        color: '#fff',
+        fontWeight:"bold"
       },
 
     otxt: {

@@ -85,8 +85,10 @@ const styles = StyleSheet.create({
   backgroundColor: "#617EE4",
 },
   signUpTxt:{
-    fontSize:22,
-    fontWeight:'bold',
+    fontSize: 20,
+    textAlign:'center',
+    color: '#fff',
+    fontWeight:"bold"
   },
   inputView: {
     backgroundColor: "#ffffff",

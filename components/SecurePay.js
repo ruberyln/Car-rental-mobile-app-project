@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 
-const SecurePay = () => {
+const SecurePay = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.head}>
@@ -31,7 +31,8 @@ const SecurePay = () => {
 
       <View style={styles.footer}>
 
-      <TouchableOpacity style={styles.button} >
+      <TouchableOpacity style={styles.button} 
+      onPress={() => navigation.navigate('TranApproved')}>
           <Text style={styles.buttontxt}>Pay Now</Text>
       </TouchableOpacity>
 
@@ -143,9 +144,10 @@ const styles = StyleSheet.create({
     },
   
     buttontxt: {
-      fontSize: 30,
+      fontSize: 20,
       textAlign:'center',
-      color: '#fff'
+      color: '#fff',
+      fontWeight:"bold"
     },
 
     Img: {

@@ -134,6 +134,7 @@ color: "#ffffff",
 fontFamily:"serif",
 fontSize:15,
 fontWeight:"bold",
+
   },
   });
 

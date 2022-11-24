@@ -13,6 +13,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Display from './components/Display'
 import SecurePay from './components/SecurePay';
 import PaymentOptions from './components/PaymentOptions';
+import TranApproved from './components/TranApproved';
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
         <Stack.Screen name="Product" component={Product} />
         <Stack.Screen name="Calendar" component={Calendar} />
         <Stack.Screen name="Summary" component={Summary} />
+        <Stack.Screen name="TranApproved" component={TranApproved} />
       </Stack.Navigator>
     </NavigationContainer>
       {/* <Product2/> */}

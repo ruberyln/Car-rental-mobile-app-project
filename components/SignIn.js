@@ -46,7 +46,7 @@ const SignIn = ({ navigation }) => {
         </TouchableOpacity>
    
         <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Welcome')}>
-          <Text>LOGIN</Text>
+          <Text style = {styles.buttontxt}>Login</Text>
         </TouchableOpacity>
       </View>
     );
@@ -57,6 +57,13 @@ const styles = StyleSheet.create({
       backgroundColor: "#fff",
       alignItems: "center",
       justifyContent: "center",
+    },
+    buttontxt: {
+      fontSize: 20,
+      textAlign:'center',
+      color: '#fff',
+      fontWeight:"bold"
+
     },
    
     image: {

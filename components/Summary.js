@@ -120,7 +120,7 @@ alignItems:"center"
             fontSize: 20,
             textAlign:'center',
             color: '#fff',
-            //fontWeight:"bold",
+            fontWeight:"bold",
           },
 
 

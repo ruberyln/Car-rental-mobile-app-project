@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const TranApproved = () => {
+const TranApproved = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Image source={require('./approved.png') }    style={styles.image}/>
@@ -15,8 +15,9 @@ const TranApproved = () => {
           <Text style={styles.msg}>Transaction  </Text>
           <Text style={styles.msg}>Approved</Text>
           </View> 
-          <TouchableOpacity style={styles.returnbtn}>
-          <Text style={styles.loginText}>RETURN TO HOME</Text>
+          <TouchableOpacity style={styles.returnbtn}
+          onPress={() => navigation.navigate('Display')}>
+          <Text style={styles.buttontxt}>RETURN TO HOME</Text>
         </TouchableOpacity>  
         </View>
       )
@@ -60,6 +61,12 @@ const styles = StyleSheet.create({
 
     
    },   
+   buttontxt: {
+    fontSize: 20,
+    textAlign:'center',
+    color: '#fff',
+    fontWeight:"bold"
+  },
 
   });
 
