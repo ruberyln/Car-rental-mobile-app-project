@@ -46,7 +46,7 @@ const Product2 = ({navigation}) => {
                         <Image style={styles.icons}
                             source={require('./src/speed.png')} />
 
-                        <Text style={styles.text3}> 320km/h</Text>
+                        <Text style={styles.text3}> 200km/h</Text>
                     </View>
 
 
@@ -55,7 +55,7 @@ const Product2 = ({navigation}) => {
                         <Image style={styles.icons}
                             source={require('./src/2.png')} />
 
-                        <Text style={styles.text3}> Two Seater</Text>
+                        <Text style={styles.text3}> Four Seater</Text>
                     </View>
                 </ScrollView>
                 <View style={styles.design}>

@@ -14,6 +14,9 @@ import Display from './components/Display'
 import SecurePay from './components/SecurePay';
 import PaymentOptions from './components/PaymentOptions';
 import TranApproved from './components/TranApproved';
+import GetStarted from './components/GetStarted';
+import Camera from './components/Cameras';
+import Cameras from './components/Cameras';
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
@@ -22,15 +25,18 @@ export default function App() {
        <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="SignIn"
-          component={SignIn}
-          options={{ title: 'Home screen' }}
+          name="Lets Get You Started"
+          component={GetStarted}
+          options={{}}
         />
+          <Stack.Screen name="GetStarted" component={GetStarted} />
+          <Stack.Screen name="Cameras" component={Cameras} />
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Display" component={Display} />
         <Stack.Screen name="SecurePay" component={SecurePay} />
         <Stack.Screen name="PaymentOptions" component={PaymentOptions} />
         <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="Product" component={Product} />
         <Stack.Screen name="Calendar" component={Calendar} />
         <Stack.Screen name="Summary" component={Summary} />

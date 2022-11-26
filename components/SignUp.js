@@ -8,7 +8,7 @@ Text,
   TouchableOpacity,
 } from 'react-native'
 
-const SignUp = () => {
+const SignUp = ({navigation}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstname] = useState("");
@@ -53,7 +53,7 @@ const SignUp = () => {
         /></View>
       
  
-  <TouchableOpacity style={styles.signUpBtn}>
+  <TouchableOpacity style={styles.signUpBtn} onPress={() => navigation.navigate('Welcome')}>
           <Text style={styles.signUpTxt}>Create Account</Text>
         </TouchableOpacity>
     </View>

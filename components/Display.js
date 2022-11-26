@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity, ImageBackground, ScrollView, FlatList } from 'react-native'
 import React,{ useState } from 'react'
 
+
 const Display = ({navigation}) => {
 
   const [carList, setcarList] = useState([
@@ -32,13 +33,29 @@ const Display = ({navigation}) => {
   )
 
   return (
+   
+
     <View style={styles.container}>
 
       <View style={styles.header}>
 
       <TextInput style={styles.input} keyboardType='default' placeholder='Search' />
     
+      <View style={styles.scroll}>
 
+      <View style={styles.rect1}>
+      <Text style={styles.txt}>Family brands</Text>
+      </View>
+
+      <View style={styles.rect2}>
+      <Text style={styles.txt}>Luxury brands</Text>
+      </View>
+
+      <View style={styles.rect3}>
+        <Text style={styles.txt}>Popular brands</Text>
+      </View>
+
+      </View>
       </View>
 
       <View style={styles.body}>
@@ -59,31 +76,21 @@ const Display = ({navigation}) => {
 
       <View style={styles.scroll}>
 
-<View style={styles.rect1}>
-<Text style={styles.txt}>Family brands</Text>
-</View>
 
-<View style={styles.rect2}>
-<Text style={styles.txt}>Luxury brands</Text>
-</View>
-
-<View style={styles.rect3}>
-  <Text style={styles.txt}>Popular brands</Text>
-</View>
 
 </View>
 
-      {/* <TouchableOpacity style={styles.tabs}>
+      <TouchableOpacity style={styles.tabs}>
       <Image source={require("../assets/home.png")} style={styles.icon}></Image>
       <Text style={styles.ttitle}>Home</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.tabs}>
       <Image source={require("../assets/notifications.png")} style={styles.icon}></Image>
-      <Text style={styles.ttitle}>Notifications</Text>
+      <Text style={styles.ttitle}>Trips</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.tabs}>
+      <TouchableOpacity style={styles.tabs} onPress={() => navigation.navigate('Cameras')} >
       <Image source={require("../assets/camera.png")} style={styles.icon}></Image>
       <Text style={styles.ttitle}>Camera</Text>
       </TouchableOpacity>
@@ -91,7 +98,7 @@ const Display = ({navigation}) => {
       <TouchableOpacity style={styles.tabs}>
       <Image source={require("../assets/profile.png")} style={styles.icon}></Image>
       <Text style={styles.ttitle}>Profile</Text>
-      </TouchableOpacity> */}
+      </TouchableOpacity>
 
       </View>
 
@@ -108,6 +115,7 @@ const styles = StyleSheet.create({
 
     header: {
       flex: 1,
+      //flexDirection:row
     },
 
     input: {
@@ -184,7 +192,7 @@ const styles = StyleSheet.create({
     },
 
     body: {
-      flex: 10,
+      flex: 5,
       alignItems:'center',
       justifyContent:'center',
       // borderWidth:
