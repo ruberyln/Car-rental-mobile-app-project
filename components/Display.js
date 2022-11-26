@@ -81,17 +81,17 @@ const Display = ({navigation}) => {
 </View>
 
       <TouchableOpacity style={styles.tabs}>
-      <Image source={require("../assets/home.png")} style={styles.icon}></Image>
-      <Text style={styles.ttitle}>Home</Text>
+      <Image source={require("./src/browse.png")} style={styles.icon}></Image>
+      <Text style={styles.ttitle}>Browse</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.tabs}>
-      <Image source={require("../assets/notifications.png")} style={styles.icon}></Image>
+      <Image source={require("./src/peoples.png")} style={styles.icon}></Image>
       <Text style={styles.ttitle}>Trips</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.tabs} onPress={() => navigation.navigate('Cameras')} >
-      <Image source={require("../assets/camera.png")} style={styles.icon}></Image>
+      <Image source={require("./src/camera2.png")} style={styles.icon}></Image>
       <Text style={styles.ttitle}>Camera</Text>
       </TouchableOpacity>
 
@@ -110,7 +110,8 @@ export default Display
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: '#fff',
     },
 
     header: {
@@ -140,7 +141,7 @@ const styles = StyleSheet.create({
       flexDirection:'row',
       padding: 5,
       margin: 5,
-      backgroundColor: '#fff',
+      // backgroundColor: '#fff',
       justifyContent:'space-around'
     },
 
@@ -262,7 +263,7 @@ const styles = StyleSheet.create({
 
     tabs: {
       margin: 10,
-      padding: 5,
+      padding: 15,
       alignItems:'center',
       justifyContent:'center'
     },

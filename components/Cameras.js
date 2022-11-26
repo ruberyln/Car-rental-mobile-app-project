@@ -57,9 +57,9 @@ const Cameras = () => {
        
         <Image style={styles.preview} source={{ uri: "data:image/jpg;base64," + photo.base64 }} />
         <View style = {styles.views}>
-        <TouchableOpacity onPress={sharePic} style = {{padding:10}}> 
+        <TouchableOpacity onPress={sharePic} style = {styles.tabs}> 
         <Image source={require("./src/share.png")} style={styles.icon}/>
-        <Text>Share</Text>
+        <Text style = {{ fontWeight:'bold'}}>Share</Text>
 
         </TouchableOpacity>
       
@@ -67,18 +67,18 @@ const Cameras = () => {
         {/* <Button title="Share" /> */}
         {hasMediaLibraryPermission ? 
 
-        <TouchableOpacity onPress={savePhoto} style = {{padding:10}}  >
+        <TouchableOpacity onPress={savePhoto} style = {styles.tabs}   >
             <Image source={require("./src/save.png")} style={styles.icon}/>
-            <Text> Save</Text>
+            <Text style = {{ fontWeight:'bold'}}> Save</Text>
         {/* <Button title="Save" />  */}
         </TouchableOpacity>
         : undefined}
 
 
 
-        <TouchableOpacity onPress={() => setPhoto(undefined)} style = {{padding:10, }}>
-        <Image source={require("./src/discard.png")} style={styles.icon}/> 
-        <Text style = {{marginRight:20, fontWeight:'bold'}}> Discard</Text>
+        <TouchableOpacity onPress={() => setPhoto(undefined)} style = {styles.tabs}>
+        <Image source={require("./src/delete.png")} style={styles.icon}/> 
+        <Text style = {{ fontWeight:'bold'}}> Discard</Text>
         </TouchableOpacity>
         {/* <Button title="Discard"  /> */}
         </View>
@@ -89,7 +89,10 @@ const Cameras = () => {
   return (
     <Camera style={styles.container} ref={cameraRef}>
       <View style={styles.buttonContainer}>
-        <Button title="Take Pic" onPress={takePic} />
+        <TouchableOpacity onPress={takePic}>
+        <Image source={require("./src/camera2.png")} style={styles.icons}/> 
+        </TouchableOpacity>
+        {/* <Button title="Take Pic"  /> */}
       </View>
       <StatusBar style="auto" />
     </Camera>
@@ -106,17 +109,20 @@ const styles = StyleSheet.create({
 
 views:{
 flexDirection: "row",
-
 marginLeft:10,
 paddingRight:20,
 padding:5,
 alignItems:"center",
-justifyContent:"center"
+justifyContent:"center",
+
+
 
 },
   buttonContainer: {
-    backgroundColor: '#fff',
-    alignSelf: 'flex-end'
+   // backgroundColor: '#fff',
+    alignSelf: 'flex-end',
+    // width:60,
+    // height:60
   },
   preview: {
     alignSelf: 'stretch',
@@ -129,6 +135,20 @@ justifyContent:"center"
      //flex:1,
      //marginTop:,
  },
+ tabs: {
+  margin: 10,
+  padding: 5,
+  alignItems:'center',
+  justifyContent:'center'
+  
+},
+ icons: {
+  //padding: 10,
+  width:60,
+  height:60,
+  //flex:1,
+  //marginTop:,
+},
 });
 
 export default Cameras
