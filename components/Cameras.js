@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView, Button, Image } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Button, Image,TouchableOpacity } from 'react-native';
 import { useEffect, useRef, useState } from 'react';
 import { Camera } from 'expo-camera';
 import { shareAsync } from 'expo-sharing';
 import * as MediaLibrary from 'expo-media-library';
 
-const Cameras = ({navigation}) => {
+
+const Cameras = () => {
   let cameraRef = useRef();
   const [hasCameraPermission, setHasCameraPermission] = useState();
   const [hasMediaLibraryPermission, setHasMediaLibraryPermission] = useState();
@@ -52,11 +53,35 @@ const Cameras = ({navigation}) => {
 
     return (
       <SafeAreaView style={styles.container}>
+
+       
         <Image style={styles.preview} source={{ uri: "data:image/jpg;base64," + photo.base64 }} />
-        <Button title="Share" onPress={sharePic} />
-        {hasMediaLibraryPermission ? <Button title="Save" onPress={savePhoto} /> : undefined}
-        <Image source={require("../assets/share.png")} style={styles.icon}> 
-        <Button title="Discard" onPress={() => setPhoto(undefined)} />
+        <View style = {styles.views}>
+        <TouchableOpacity onPress={sharePic} style = {{padding:10}}> 
+        <Image source={require("./src/share.png")} style={styles.icon}/>
+        <Text>Share</Text>
+
+        </TouchableOpacity>
+      
+
+        {/* <Button title="Share" /> */}
+        {hasMediaLibraryPermission ? 
+
+        <TouchableOpacity onPress={savePhoto} style = {{padding:10}}  >
+            <Image source={require("./src/save.png")} style={styles.icon}/>
+            <Text> Save</Text>
+        {/* <Button title="Save" />  */}
+        </TouchableOpacity>
+        : undefined}
+
+
+
+        <TouchableOpacity onPress={() => setPhoto(undefined)} style = {{padding:10, }}>
+        <Image source={require("./src/discard.png")} style={styles.icon}/> 
+        <Text style = {{marginRight:20, fontWeight:'bold'}}> Discard</Text>
+        </TouchableOpacity>
+        {/* <Button title="Discard"  /> */}
+        </View>
       </SafeAreaView>
     );
   }
@@ -76,7 +101,19 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+
   },
+
+views:{
+flexDirection: "row",
+
+marginLeft:10,
+paddingRight:20,
+padding:5,
+alignItems:"center",
+justifyContent:"center"
+
+},
   buttonContainer: {
     backgroundColor: '#fff',
     alignSelf: 'flex-end'
@@ -84,7 +121,14 @@ const styles = StyleSheet.create({
   preview: {
     alignSelf: 'stretch',
     flex: 1
-  }
+  },
+  icon: {
+     //padding: 10,
+     width:25,
+     height:25,
+     //flex:1,
+     //marginTop:,
+ },
 });
 
 export default Cameras
