@@ -22,24 +22,12 @@ import GetStarted from './components/GetStarted';
 //import Camera from './components/Cameras';
 import Cameras from './components/Cameras';
 
+import Account from './components/Account';
 const Stack = createNativeStackNavigator();
 export default function App() {
 
-//   const fetchApi = async()=>{
-//     try{
-//       const res = await axios.get('http://192.168.0.203:3000/')
-//       console.log(res.data);
-//     }
-//     catch(error){
-// console.log(error.message)
-//     }
-  
-//   }
 
-// useEffect(()=>{
-// fetchApi()
 
-// },[])
 
   return (
   
@@ -61,6 +49,7 @@ export default function App() {
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="Product" component={Product} />
+        <Stack.Screen name="Account" component={Account} />
         <Stack.Screen name="Calendar" component={Calendar} />
         <Stack.Screen name="Summary" component={Summary} />
         <Stack.Screen name="TranApproved" component={TranApproved} />

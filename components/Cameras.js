@@ -90,7 +90,7 @@ const Cameras = () => {
     <Camera style={styles.container} ref={cameraRef}>
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={takePic}>
-        <Image source={require("./src/camera2.png")} style={styles.icons}/> 
+        <Image source={require("./src/shot.png")} style={styles.icons}/> 
         </TouchableOpacity>
         {/* <Button title="Take Pic"  /> */}
       </View>

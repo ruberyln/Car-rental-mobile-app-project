@@ -80,24 +80,24 @@ const Display = ({navigation}) => {
 
 </View>
 
-      <TouchableOpacity style={styles.tabs}>
+      <TouchableOpacity style={styles.tabs} onPress={() => navigation.navigate('Display')}>
       <Image source={require("./src/browse.png")} style={styles.icon}></Image>
       <Text style={styles.ttitle}>Browse</Text>
       </TouchableOpacity>
-
+{/* 
       <TouchableOpacity style={styles.tabs}>
       <Image source={require("./src/peoples.png")} style={styles.icon}></Image>
       <Text style={styles.ttitle}>Trips</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
       <TouchableOpacity style={styles.tabs} onPress={() => navigation.navigate('Cameras')} >
       <Image source={require("./src/camera2.png")} style={styles.icon}></Image>
       <Text style={styles.ttitle}>Camera</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.tabs}>
+      <TouchableOpacity style={styles.tabs} onPress={() => navigation.navigate('Account')}>
       <Image source={require("../assets/profile.png")} style={styles.icon}></Image>
-      <Text style={styles.ttitle}>Profile</Text>
+      <Text style={styles.ttitle}>Account</Text>
       </TouchableOpacity>
 
       </View>

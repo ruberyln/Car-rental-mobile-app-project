@@ -2,8 +2,16 @@ import React from "react";
 import { useState } from "react";
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity, onPress } from 'react-native';
 import call from 'react-native-phone-call'
+import { Constants,SMS } from "expo";
 
 const Product = ({navigation}) => {
+const Tap = async()=> {
+    const status = await SMS.sendSMSAsync(
+        '6395603455',
+    );
+console.log(status);
+};
+
 const [inputValue, setInputValue] = useState('6395603455');
 
    const triggerCall =() => {
@@ -29,7 +37,7 @@ const [inputValue, setInputValue] = useState('6395603455');
                 {/* <Image style = {styles.dot}
                  source= {require('./dots.png')}/> */}
 
-                <Text style={styles.text2}> Specs</Text>
+                <Text style={styles.text2}>  Car Specifications </Text>
             </View >
 
             <View style={styles.scrollview}>
@@ -45,14 +53,7 @@ const [inputValue, setInputValue] = useState('6395603455');
 
 
                     </View>
-                    <View style={styles.box}>
-
-                        <Image style={styles.icons}
-                            source={require('./src/fuel.png')} />
-
-                        <Text style={styles.text3}> Economical</Text>
-                    </View>
-
+                  
 
                     <View style={styles.box}>
 
@@ -68,17 +69,30 @@ const [inputValue, setInputValue] = useState('6395603455');
                         <Image style={styles.icons}
                             source={require('./src/2.png')} />
 
-                        <Text style={styles.text3}> Four Seater</Text>
+                        <Text style={styles.text3}>4 Seater</Text>
                     </View>
+
+                    <View style={styles.box}>
+
+<Image style={styles.icons}
+    source={require('./src/fuel.png')} />
+
+<Text style={styles.text3}> Economical</Text>
+</View>
+
                 </ScrollView>
                 <View style={styles.design}>
-                    <Text style={styles.text2}> Contact </Text>
+                    <Text style={styles.text2}> Contact For Inquiries </Text>
 
                     <View style={{ flexDirection: "row" }}>
                         <Text style={styles.normaltext}> Ellen </Text>
 
+
+                        <TouchableOpacity onPress={Tap}>
                         <Image style={styles.icons}
                             source={require('./src/message.png')} />
+
+</TouchableOpacity>
                             <TouchableOpacity onPress={triggerCall}>
                         <Image style={styles.icons}
                             source={require('./src/call.png')} />
