@@ -20,7 +20,7 @@ const Summary = ({navigation,route}) => {
             <Image style= {{flexDirection:"row",paddingTop:15, width:20, height:20,}}
                             source={require('./src/calendar.png')} />
                      <Text style = {{fontSize:16, fontFamily:"serif",}}>
-                     Pick-Up Date:
+                     Pick-Up Date:{route.startDate}
                 </Text>
             </View>
 

@@ -1,8 +1,21 @@
 import React from "react";
+import { useState } from "react";
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity, onPress } from 'react-native';
+import call from 'react-native-phone-call'
 
+const Product = ({navigation}) => {
+const [inputValue, setInputValue] = useState('6395603455');
 
-const Product2 = ({navigation}) => {
+   const triggerCall =() => {
+
+    const args = {
+      number: inputValue,
+      prompt: true,
+     // skipCanOpen: true // Skip the canOpenURL check
+    };
+    //Make a call
+    call(args).catch(console.error)
+ };
     return (
         <View style={styles.container}>
 
@@ -66,8 +79,10 @@ const Product2 = ({navigation}) => {
 
                         <Image style={styles.icons}
                             source={require('./src/message.png')} />
+                            <TouchableOpacity onPress={triggerCall}>
                         <Image style={styles.icons}
                             source={require('./src/call.png')} />
+                            </TouchableOpacity>
                     </View>
 
                     <View style={{ flexDirection: "column", paddingTop:10,}}>
@@ -78,7 +93,7 @@ const Product2 = ({navigation}) => {
                     <View style={{ flexDirection: "row", paddingTop:10, }} >
                         <Image style={styles.icons}
                             source={require('./src/location.png')} />
-                            <TouchableOpacity>
+                            <TouchableOpacity  onPress={() => navigation.navigate('Map')}>
                         <Text style={styles.normaltext}> 2409 Dewdney Avenue Regina,SK. </Text>
                         </TouchableOpacity>
                     </View>
@@ -246,4 +261,4 @@ const styles =
         }
     })
 
-export default Product2;
+export default Product;

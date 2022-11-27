@@ -19,6 +19,7 @@ const Calendar = ({navigation}) => {
       setSelectedStartDate(date);
     }
   };
+  const startDate =  selectedStartDate ? selectedStartDate.toString() : '';
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
@@ -66,15 +67,16 @@ const Calendar = ({navigation}) => {
               }}
               onDateChange={onDateChange}
             />
-            <View style={styles.textStyle}>
+            <View style={styles.box2}>
+
           <Text style={styles.textStyle}>
-            Selected Start Date :
+             Start Date :
           </Text>
           <Text style={styles.textStyle}>
-            {selectedStartDate ? selectedStartDate.toString() : ''}
+            {startDate}
           </Text>
           <Text style={styles.textStyle}>
-            Selected End Date :
+             End Date :
           </Text>
           <Text style={styles.textStyle}>
             {selectedEndDate ? selectedEndDate.toString() : ''}
@@ -110,6 +112,10 @@ const styles = StyleSheet.create({
       margin: 20,
       fontFamily:"serif",
       fontWeight:'bold',
+    },
+    box2:{
+borderBottomEndRadius:3,
+border:1,
     },
     box: {
       backgroundColor: "#617EE4",

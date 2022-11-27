@@ -9,13 +9,14 @@ import SignUp from './components/SignUp';
 import Welcome from './components/Welcome';
 
 import { NavigationContainer } from '@react-navigation/native';
+import Map from './components/Map';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Display from './components/Display'
 import SecurePay from './components/SecurePay';
 import PaymentOptions from './components/PaymentOptions';
 import TranApproved from './components/TranApproved';
 import GetStarted from './components/GetStarted';
-import Camera from './components/Cameras';
+//import Camera from './components/Cameras';
 import Cameras from './components/Cameras';
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -35,6 +36,7 @@ export default function App() {
         <Stack.Screen name="Display" component={Display} />
         <Stack.Screen name="SecurePay" component={SecurePay} />
         <Stack.Screen name="PaymentOptions" component={PaymentOptions} />
+        <Stack.Screen name="Map" component={Map} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="Product" component={Product} />
