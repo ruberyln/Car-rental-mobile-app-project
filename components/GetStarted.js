@@ -10,7 +10,7 @@ import {
 } from "react-native";
 //const image = { uri: "https://reactjs.org/logo-og.png" };
 
-const GetStarted = () => {
+const GetStarted = ({navigation}) => {
 
 
   return (
@@ -27,13 +27,13 @@ const GetStarted = () => {
 
       <View style={styles.left}>
 
-        <TouchableOpacity style={styles.getStaretdBtn}>
+        <TouchableOpacity style={styles.getStaretdBtn} onPress={() => navigation.navigate('SignUp')}>
           <Text style={styles.txt}>GET STARTED</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => Linking.openURL('http://google.com')}>
+        <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
 
-          <Text style={styles.forgot_button}>"I alrady have an account"</Text>
+          <Text style={styles.forgot_button}>"I already have an account"</Text>
         </TouchableOpacity>
       </View>
 
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   ride:{
-    fontSize: 12,
+    fontSize: 15,
     fontWeight: 'bold',
     color:'white',
   },

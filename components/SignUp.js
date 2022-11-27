@@ -12,50 +12,11 @@ import * as Yup from 'yup';
 import client from '../api/client';
 import axios from "axios";
 
-const validationSchema = Yup.object({
-  firstName: Yup.string().required('first is required!'),
-  lastName: Yup.string().required('last is required!'),
-  email: Yup.string().required('Email is required!'),
-  password: Yup.string().required('password is required!'),
-});
 const SignUp = () => {
-  console.log("client")
-  const [userData, setUserData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-  });
-  const [error, setError] = useState('');
-
-  const { firstName, lastName, email, password } = userData;
-
-  const handleOnChangeText = (value, fieldName) => {
-    setUserData({ ...userData, [fieldName]: value });
-  };
-
-  const signUp = async(values, formikActions) => {
-try
-{
-  console.log("Here",values)
-  const res =  await axios.post("https://192.168.0.203:5000/signup",{...values})
-  console.log("res",res)
-}
-  catch(error)
-  {
-    console.error("Error",error)
-  }
-    
-  };
-
-
-
-
-
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [firstName, setFirstname] = useState("");
-  // const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstname] = useState("");
+  const [lastName, setLastName] = useState("");
   return (
     <View
       style={styles.container}>
@@ -105,27 +66,20 @@ try
                 onChangeText={handleChange('email')}
               /></View>
 
-            <View style={styles.inputView}>
-              <TextInput
-                style={styles.input}
-                placeholder='Password'
-                value={password}
-                secureTextEntry={true}
-                autoCapitalize="none"
-                placeholderTextColor="#003f5c"
-                onChangeText={handleChange('password')}
-              /></View>
-
-
-            <TouchableOpacity style={styles.signUpBtn} onPress={handleSubmit}>
-
-              <Text style={styles.signUpTxt}>Create Account</Text>
-            </TouchableOpacity>
-          </>
-        }}
-
-      </Formik>
-
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.input}
+          placeholder='Password'
+          secureTextEntry={true}
+          autoCapitalize="none"
+          placeholderTextColor="#003f5c"
+          onChangeText={(password) => setPassword(password)}
+        /></View>
+      
+ 
+  <TouchableOpacity style={styles.signUpBtn}>
+          <Text style={styles.signUpTxt}>Create Account</Text>
+        </TouchableOpacity>
     </View>
   )
 }
