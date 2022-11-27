@@ -14,8 +14,28 @@ import Display from './components/Display'
 import SecurePay from './components/SecurePay';
 import PaymentOptions from './components/PaymentOptions';
 import TranApproved from './components/TranApproved';
+import axios from 'axios';
+import { useEffect } from 'react';
+
 const Stack = createNativeStackNavigator();
 export default function App() {
+
+//   const fetchApi = async()=>{
+//     try{
+//       const res = await axios.get('http://192.168.0.203:3000/')
+//       console.log(res.data);
+//     }
+//     catch(error){
+// console.log(error.message)
+//     }
+  
+//   }
+
+// useEffect(()=>{
+// fetchApi()
+
+// },[])
+
   return (
   
     <View style={styles.container}>
