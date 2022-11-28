@@ -21,7 +21,7 @@ const GetStarted = ({navigation}) => {
         style={styles.img}>
       <View style={styles.first}>
         <Text style={styles.welcome}>TURBO</Text>
-        <Text style={styles.ride}>A JOURNEY OF RIDE</Text>
+        <Text style={styles.ride}>A ride of a lifetime</Text>
       </View>
       <StatusBar style="auto" />
 
@@ -65,11 +65,11 @@ const styles = StyleSheet.create({
  
   },
   welcome: {
-    // fontfamily: "Cormorant Garamond",
+ 
     fontSize: 42,
     fontWeight: 'bold',
     color:'white',
-    fontFamily:'serif',
+
     letterSpacing:4,
 
 

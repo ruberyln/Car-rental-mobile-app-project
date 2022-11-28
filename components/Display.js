@@ -41,7 +41,7 @@ const Display = ({navigation}) => {
 
       <TextInput style={styles.input} keyboardType='default' placeholder='Search' />
     
-      <View style={styles.scroll}>
+      {/* <View style={styles.scroll}>
 
       <View style={styles.rect1}>
       <Text style={styles.txt}>Family brands</Text>
@@ -55,7 +55,7 @@ const Display = ({navigation}) => {
         <Text style={styles.txt}>Popular brands</Text>
       </View>
 
-      </View>
+      </View> */}
       </View>
 
       <View style={styles.body}>

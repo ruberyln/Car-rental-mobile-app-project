@@ -34,7 +34,7 @@ const Account = ({navigation,route}) => {
             <Image style= {{flexDirection:"row",paddingTop:15,  width:20, height:20,}}
                             source={require('./src/profile.png')} />
                             <TouchableOpacity>
-                     <Text style = {{fontSize:16, fontFamily:"serif",}}>
+                     <Text style = {{fontSize:16,}}>
                     Account details 
                 </Text>
                 </TouchableOpacity>
@@ -44,7 +44,7 @@ const Account = ({navigation,route}) => {
             <Image style= {{flexDirection:"row",paddingTop:15, width:20, height:20,}}
                             source={require('./src/support.png')} />
                             <TouchableOpacity onPress ={triggerCall}>
-                     <Text style = {{fontSize:16, fontFamily:"serif",}}>
+                     <Text style = {{fontSize:16,}}>
                     Contact Support 
                 </Text>
                 </TouchableOpacity>
@@ -54,7 +54,7 @@ const Account = ({navigation,route}) => {
             <Image style= {{flexDirection:"row",paddingTop:15, width:20,height:20,}}
                             source={require('./src/logout.png')} />
                             <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
-                     <Text style = {{fontSize:16, fontFamily:"serif",}}>
+                     <Text style = {{fontSize:16,}}>
                     Log Out
                 </Text>
                 </TouchableOpacity>
@@ -120,7 +120,7 @@ alignItems:"center"
            // paddingTop: 10,
             fontWeight: 'bold',
             fontSize: 32,
-            fontFamily: 'serif',
+          
             alignItems:"center",
             justifyContent:"center",
            

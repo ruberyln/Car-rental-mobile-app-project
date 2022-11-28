@@ -3,14 +3,22 @@ import { useState } from "react";
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity, onPress } from 'react-native';
 import call from 'react-native-phone-call'
 import { Constants,SMS } from "expo";
+import email from 'react-native-email'
+
 
 const Product = ({navigation}) => {
-const Tap = async()=> {
-    const status = await SMS.sendSMSAsync(
-        '6395603455',
-    );
-console.log(status);
-};
+
+    handleEmail = () => {
+        const to = ['turbocompany@gmail.com.com', 'contactsupport@email.com'] // string or array of email addresses
+        email(to, {
+            // Optional additional arguments
+            cc: ['', ''], // string or array of email addresses
+            bcc: '', // string or array of email addresses
+            subject: 'Car Inquiry',
+            body: '',
+            checkCanOpen: false // Call Linking.canOpenURL prior to Linking.openURL
+        }).catch(console.error)
+    }
 
 const [inputValue, setInputValue] = useState('6395603455');
 
@@ -88,9 +96,9 @@ const [inputValue, setInputValue] = useState('6395603455');
                         <Text style={styles.normaltext}> Ellen </Text>
 
 
-                        <TouchableOpacity onPress={Tap}>
+                        <TouchableOpacity onPress={handleEmail}>
                         <Image style={styles.icons}
-                            source={require('./src/message.png')} />
+                            source={require('./src/mail.png')} />
 
 </TouchableOpacity>
                             <TouchableOpacity onPress={triggerCall}>
@@ -169,7 +177,7 @@ const styles =
             borderTopRightRadius: 20,
             paddingHorizontal: 3,
             borderRadius: 20,
-            fontFamily :"Serif",
+          
             fontSize :20,
         
         },
@@ -179,18 +187,18 @@ const styles =
         text2: {
             fontWeight: 'bold',
             fontSize: 20,
-            fontFamily: 'serif',
+         
         },
         text3: {
             color: "#FFFFFF",
             textAlign: "center",
             padding: 8,
-            fontFamily: "serif",
+          
             fontSize: 12,
         },
         normaltext: {
             fontSize: 18,
-            fontFamily: 'serif',
+          
             paddingTop: 10,
         },
 
@@ -232,7 +240,7 @@ const styles =
             alignItems:"center",
             justifyContent:"center",
             color: "#ffffff",
-            fontFamily:"serif",
+          
             fontSize:20,
             fontWeight:"bold",
               },
@@ -242,7 +250,7 @@ const styles =
             paddingRight: 250,
             fontWeight: 'bold',
             fontSize: 20,
-            fontFamily: 'serif',
+           
         },
        
         icons: {
@@ -270,7 +278,7 @@ const styles =
         {
             fontWeight: 'bold',
             fontSize: 20,
-            fontFamily: 'serif',
+      
 
         }
     })

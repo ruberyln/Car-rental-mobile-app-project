@@ -15,14 +15,16 @@ import Display from './components/Display'
 import SecurePay from './components/SecurePay';
 import PaymentOptions from './components/PaymentOptions';
 import TranApproved from './components/TranApproved';
-import axios from 'axios';
-import { useEffect } from 'react';
+
+
 
 import GetStarted from './components/GetStarted';
 //import Camera from './components/Cameras';
 import Cameras from './components/Cameras';
 
 import Account from './components/Account';
+import Email from './components/Email';
+// import Apple from './components/Apple';
 const Stack = createNativeStackNavigator();
 export default function App() {
 
@@ -46,10 +48,12 @@ export default function App() {
         <Stack.Screen name="SecurePay" component={SecurePay} />
         <Stack.Screen name="PaymentOptions" component={PaymentOptions} />
         <Stack.Screen name="Map" component={Map} />
+        <Stack.Screen name="Email" component={Email} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="Product" component={Product} />
         <Stack.Screen name="Account" component={Account} />
+        {/* <Stack.Screen name="Apple" component={Apple} /> */}
         <Stack.Screen name="Calendar" component={Calendar} />
         <Stack.Screen name="Summary" component={Summary} />
         <Stack.Screen name="TranApproved" component={TranApproved} />
