@@ -20,6 +20,8 @@ const Calendar = ({navigation}) => {
     }
   };
   const startDate =  selectedStartDate ? selectedStartDate.toString() : '';
+  const EndDate = selectedEndDate ? selectedEndDate.toString() : '';
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
@@ -62,7 +64,7 @@ const Calendar = ({navigation}) => {
               selectedDayTextColor="#000000"
               scaleFactor={375}
               textStyle={{
-                fontFamily: 'serif',
+             
                 color: '#000000',
               }}
               onDateChange={onDateChange}
@@ -79,13 +81,13 @@ const Calendar = ({navigation}) => {
              End Date :
           </Text>
           <Text style={styles.textStyle}>
-            {selectedEndDate ? selectedEndDate.toString() : ''}
+            {EndDate}
           </Text>
         </View>
       </View>
 
       <TouchableOpacity style = {styles.box}
-       onPress={() => navigation.navigate('Summary')} >
+       onPress={() => navigation.navigate('Summary', {startDate, EndDate})} >
        <Text style = {styles.text}> Continue </Text>
       </TouchableOpacity>
     </SafeAreaView>
@@ -101,7 +103,7 @@ const styles = StyleSheet.create({
     },
     textStyle: {
       marginTop: 20,
-      fontFamily:"serif",
+     
       fontSize:15,
       fontWeight:"bold",
       flexDirection:"column"
@@ -110,7 +112,7 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontSize: 20,
       margin: 20,
-      fontFamily:"serif",
+    
       fontWeight:'bold',
     },
     box2:{
@@ -137,7 +139,7 @@ border:1,
 alignItems:"center",
 justifyContent:"center",
 color: "#ffffff",
-fontFamily:"serif",
+
 fontSize:15,
 fontWeight:"bold",
 

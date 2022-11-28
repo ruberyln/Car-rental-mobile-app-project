@@ -21,7 +21,7 @@ const SecurePay = ({navigation}) => {
             </View>
 
             <View style={styles.parent}>
-            <TextInput style={styles.input2} keyboardType='default' placeholder='MM/YY' />
+            <TextInput style={styles.input2} keyboardType='numeric' placeholder='MM/YY' />
             <TextInput style={styles.input2} keyboardType='numeric' placeholder='000' />
             </View>
 

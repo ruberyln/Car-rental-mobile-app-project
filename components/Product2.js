@@ -140,7 +140,7 @@ const styles =
             borderTopRightRadius: 20,
             paddingHorizontal: 3,
             borderRadius: 20,
-            fontFamily :"serif",
+         
             fontSize :20,
         
         },
@@ -150,18 +150,18 @@ const styles =
         text2: {
             fontWeight: 'bold',
             fontSize: 20,
-            fontFamily: 'serif',
+          
         },
         text3: {
             color: "#FFFFFF",
             textAlign: "center",
             padding: 8,
-            fontFamily: "serif",
+        
             fontSize: 12,
         },
         normaltext: {
             fontSize: 18,
-            fontFamily: 'serif',
+      
             paddingTop: 10,
         },
 
@@ -203,7 +203,7 @@ const styles =
             alignItems:"center",
             justifyContent:"center",
             color: "#ffffff",
-            fontFamily:"serif",
+       
             fontSize:20,
             fontWeight:"bold",
               },
@@ -213,7 +213,7 @@ const styles =
             paddingRight: 250,
             fontWeight: 'bold',
             fontSize: 20,
-            fontFamily: 'serif',
+    
         },
         scrollview:
         {
@@ -250,7 +250,7 @@ const styles =
         {
             fontWeight: 'bold',
             fontSize: 20,
-            fontFamily: 'serif',
+         
 
         }
     })
