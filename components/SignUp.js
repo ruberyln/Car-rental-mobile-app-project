@@ -17,7 +17,7 @@ const validationSchema = Yup.object({
   email: Yup.string().required('Email is required!'),
   password: Yup.string().required('password is required!'),
 });
-const SignUp = () => {
+const SignUp = ({navigation}) => {
   const [userData, setUserData] = useState({
     firstName: '',
     lastName: '',
@@ -36,8 +36,8 @@ const SignUp = () => {
 
    const res =  await client.post('/signup' ,{
      ...values
-    })
-    console.log(res);
+    });
+ navigation.navigate("Welcome");
     // console.log(values);
   };
 
