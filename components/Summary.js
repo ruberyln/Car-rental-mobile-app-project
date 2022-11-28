@@ -3,7 +3,7 @@ import React from "react";
 import { View, Text, Image, StyleSheet,TouchableOpacity } from 'react-native';
 
 
-const Summary = () => {
+const Summary = ({navigation,route}) => {
     return (
         <View style= {styles.container}>
             <Text style = {styles.text}> Order Summary</Text>
@@ -11,7 +11,7 @@ const Summary = () => {
             <View style = {{flexDirection:"row",paddingTop:15,}}>
             <Image style= {{flexDirection:"row",paddingTop:15,  width:20, height:20,}}
                             source={require('./src/car.png')} />
-                     <Text style = {{fontSize:16, fontFamily:"serif",}}>
+                     <Text style = {{fontSize:16,}}>
                      Car:
                 </Text>
             </View>
@@ -19,30 +19,30 @@ const Summary = () => {
             <View style = {{flexDirection:"row",paddingTop:30,}}>
             <Image style= {{flexDirection:"row",paddingTop:15, width:20, height:20,}}
                             source={require('./src/calendar.png')} />
-                     <Text style = {{fontSize:16, fontFamily:"serif",}}>
-                     Pick-Up Date:{route.startDate}
+                     <Text style = {{fontSize:16,}}>
+                     Pick-Up Date:{route.params.startDate}
                 </Text>
             </View>
 
             <View style = {{flexDirection:"row",paddingTop:30,}}>
             <Image style= {{flexDirection:"row",paddingTop:15, width:20,height:20,}}
                             source={require('./src/calendar.png')} />
-                     <Text style = {{fontSize:16, fontFamily:"serif",}}>
-                     Return Date:
+                     <Text style = {{fontSize:16, }}>
+                     Return Date: {route.params.EndDate}
                 </Text>
             </View>
             
             <View style = {{flexDirection:"row",paddingTop:30,}}>
             <Image style= {{flexDirection:"row",paddingTop:15, width:20, height:20,}}
                             source={require('./src/map.png')} />
-                     <Text style = {{fontSize:16, fontFamily:"serif",}}>
+                     <Text style = {{fontSize:16, }}>
                      PickUp location:
                 </Text>
             </View>
 
             <View style = {{flexDirection:"row",paddingTop:80,}}>
            
-                     <Text style = {{fontSize:30, fontFamily:"serif",fontWeight:"bold"}}>
+                     <Text style = {{fontSize:30, fontWeight:"bold"}}>
                     Total:
                 </Text>
             </View>
@@ -86,7 +86,7 @@ alignItems:"center"
            // paddingTop: 10,
             fontWeight: 'bold',
             fontSize: 32,
-            fontFamily: 'serif',
+           
             alignItems:"center",
             justifyContent:"center",
            

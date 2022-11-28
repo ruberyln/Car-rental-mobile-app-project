@@ -16,34 +16,29 @@ const PaymentOptions = ({navigation}) => {
         <View style={styles.body}>
             <View style={styles.card}>
 
-            <TouchableOpacity style={styles.options}>
+            <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('SecurePay')}>
                 <Image source={require("../assets/mcard.png")} style={styles.logo}></Image>
                 <Text style={styles.otxt}>Master Card</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.options}>
+            <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('SecurePay')}>
                 <Image source={require("../assets/visa.png")} style={styles.logo}></Image>
                 <Text style={styles.otxt}>Visa Credit Card</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.options}>
+            <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('Apple')}>
                 <Image source={require("../assets/apay.png")} style={styles.logo}></Image>
                 <Text style={styles.otxt}>Apple Pay</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.options}>
+            <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('SecurePay')}>
                 <Image source={require("../assets/gpay.jpg")} style={styles.logo}></Image>
                 <Text style={styles.otxt}>Google Pay</Text>
             </TouchableOpacity>
             </View>
         </View>
       
-        <View style={styles.footer}>
-        <TouchableOpacity style={styles.button}
-         onPress={() => navigation.navigate('SecurePay')}>
-          <Text style={styles.buttontxt}>Proceed To Payment</Text>
-        </TouchableOpacity>    
-        </View>
+       
     </View>
   )
 }
@@ -84,9 +79,9 @@ const styles = StyleSheet.create({
       },
     
     body: {
-        flex: 2,
+        flex: 8,
         margin: 5,
-        padding: 5,
+        padding: 15,
         justifyContent:'center',
     },
 
@@ -97,7 +92,8 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         borderStyle: "solid",
         borderColor: "rgba(0, 0, 0, 0.2)",
-        borderWidth: 1
+        borderWidth: 1,
+        flex:2
     },
 
     footer: {

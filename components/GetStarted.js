@@ -65,11 +65,11 @@ const styles = StyleSheet.create({
  
   },
   welcome: {
-    // fontfamily: "Cormorant Garamond",
+ 
     fontSize: 42,
     fontWeight: 'bold',
     color:'white',
-    fontFamily:'serif',
+
     letterSpacing:4,
 
 
