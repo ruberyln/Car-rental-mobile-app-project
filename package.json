@@ -32,11 +32,11 @@
     "react-native-phone-call": "^1.2.0",
     "react-native-safe-area-context": "4.4.1",
     "react-native-screens": "~3.18.0",
-<<<<<<< HEAD
-    "yup": "^0.32.11"
-=======
+
+    "yup": "^0.32.11",
+
     "stripe": "^11.1.0"
->>>>>>> ba5af2574c2062b584e3848e9ee882fcc388573c
+
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
