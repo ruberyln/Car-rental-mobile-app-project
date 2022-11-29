@@ -14,8 +14,8 @@ import client from '../api/client';
 import { isValidEmail, isValidObjField, updateError } from './methods'
 
 const validationSchema = Yup.object({
-  firstName: Yup.string().required('first is required!'),
-  lastName: Yup.string().required('last is required!'),
+  firstName: Yup.string().required('first name is required!'),
+  lastName: Yup.string().required('last name is required!'),
   email: Yup.string().required('Email is required!'),
   password: Yup.string().required('password is required!'),
 });
@@ -31,22 +31,22 @@ const SignUp = ({ navigation }) => {
   const [error, setError] = useState('');
 
 
-  const isValidForm = () => {
-    // we will accept only if all of the fields have value
-    if (!isValidObjField(userData))
-      return updateError('Required all fields!', setError);
-    // if valid name with 3 or more characters
-    if (!firstName.trim() || firstName.length < 3)
-      return updateError('Invalid name!', setError);
-    // only valid email id is allowed
-    if (!isValidEmail(email)) return updateError('Invalid email!', setError);
-    // password must have 8 or more characters
-    if (!password.trim() || password.length < 8)
-      return updateError('Password is less then 8 characters!', setError);
+  // const isValidForm = () => {
+  //   // we will accept only if all of the fields have value
+  //   if (!isValidObjField(userData))
+  //     return updateError('Required all fields!', setError);
+  //   // if valid name with 3 or more characters
+  //   if (!firstName.trim() || firstName.length < 3)
+  //     return updateError('Invalid name!', setError);
+  //   // only valid email id is allowed
+  //   if (!isValidEmail(email)) return updateError('Invalid email!', setError);
+  //   // password must have 8 or more characters
+  //   if (!password.trim() || password.length < 3)
+  //     return updateError('Password is less then 8 characters!', setError);
 
 
-    return true;
-  };
+  //   return true;
+  // };
 
 
   const { firstName, lastName, email, password } = userData;
@@ -89,7 +89,7 @@ const SignUp = ({ navigation }) => {
               <Text style={styles.welcome}>Let's Get You Started ! </Text>
           
             </View>
-            {error ? (<Text style={{ color: 'red', fontSize: 16 }}>{error}</Text>)
+            {errors.firstName ? (<Text style={{ color: 'red', fontSize: 16 }}>{errors.firstName}</Text>)
                 : null
               }
             <View style={styles.inputView}>
@@ -103,6 +103,9 @@ const SignUp = ({ navigation }) => {
                 placeholderTextColor="#003f5c"
                 onChangeText={handleChange('firstName')}
               /></View>
+              {errors.lastName ? (<Text style={{ color: 'red', fontSize: 16 }}>{errors.lastName}</Text>)
+                : null
+              }
             <View style={styles.inputView}>
               <TextInput
                 style={styles.input}
@@ -111,7 +114,12 @@ const SignUp = ({ navigation }) => {
                 autoCapitalize="none"
                 placeholderTextColor="#003f5c"
                 onChangeText={handleChange('lastName')}
-              /></View><View style={styles.inputView}>
+              /></View>
+                  {errors.email? (<Text style={{ color: 'red', fontSize: 16 }}>{errors.email}</Text>)
+                : null
+              }
+              <View style={styles.inputView}>
+            
               <TextInput
                 style={styles.input}
                 placeholder='Email'
@@ -122,7 +130,9 @@ const SignUp = ({ navigation }) => {
                 placeholderTextColor="#003f5c"
                 onChangeText={handleChange('email')}
               /></View>
-
+    {errors.password? (<Text style={{ color: 'red', fontSize: 16 }}>{errors.password}</Text>)
+                : null
+              }
             <View style={styles.inputView}>
               <TextInput
                 style={styles.input}
@@ -189,7 +199,7 @@ const styles = StyleSheet.create({
     height: 45,
     marginBottom: 20,
 
-    alignItems: "center",
+    // alignItems: "center",
   },
   first: {
     paddingBottom: 100,
