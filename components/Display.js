@@ -1,33 +1,316 @@
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity, ImageBackground, ScrollView, FlatList } from 'react-native'
 import React,{ useState } from 'react'
+import { data } from '../Data';
 
 
 const Display = ({navigation}) => {
 
-  const [carList, setcarList] = useState([
-    {val: 'Lamborghini 2020', src: require("../assets/car.png"), rate: '$180/day', key: '1'},
-    {val: 'Toyota Prado 2022', src: require("../assets/car.png"), rate: '$80/day', key: '2'},
-    {val: 'Porsche', src: require("../assets/car.png"), rate: '$120/day', key: '3'},
-    {val: 'Ferrari', src: require("../assets/car.png"), rate: '$300/day', key: '4'},
-    {val: 'BMW', src: require("../assets/car.png"), rate: '$130/day', key: '5'},
-    {val: 'Hyundai', src: require("../assets/car.png"), rate: '$40/day', key: '6'},
-    {val: 'Mercedes', src: require("../assets/car.png"), rate: '$120/day', key: '7'},
-    {val: 'Jeep', src: require("../assets/car.png"), rate: '$150/day', key: '8'},
-  ]);
+  const [carList, setcarList] = useState(
+    [
+      {
+          key: "1",
+          brand: "Honda",
+          name: "CRV",
+          model: "2021",
+          rate: "80",
+          type: "suv",
+          maxspeed: "260 km/h",
+          seats: "4",
+          transmission: "Auto",
+          address: {
+              suite: "3666",
+              street: "Albert Park",
+              city: "Regina",
+              zipcode: "S4J 1S4"
+          },
+          src: require('../assets/Carimgs/crvs.png')
+      },
+      {
+          key: "2",
+          brand: "Ferrari",
+          name: "F3",
+          model: "2020",
+          rate: "340",
+          type: "sedan",
+          maxspeed: "350 km/h",
+          seats: "2",
+          transmission: "Auto",
+          address: {
+              suite: "1999",
+              street: "Winipeg St.",
+              city: "Regina",
+              zipcode: "S1H 7W3"
+          },
+          src: require('../assets/Carimgs/ferrari.jpeg')
+      },
+      {
+          key: "3",
+          brand: "Honda",
+          name: "Civic",
+          model: "2017",
+          rate: "70",
+          type: "sedan",
+          maxspeed: "240 km/h",
+          seats: "4",
+          transmission: "Auto",
+          address: {
+              suite: "3478",
+              street: "Broad St.",
+              city: "Regina",
+              zipcode: "S7S 7S3"
+          },
+          src: require('../assets/Carimgs/honda.png')
+      },
+      {
+          key: "4",
+          brand: "Toyota",
+          name: "Yaris",
+          model: "2017",
+          rate: "40",
+          type: "sedan",
+          maxspeed: "220 km/h",
+          seats: "4",
+          transmission: "Auto",
+          address: {
+              suite: "1273",
+              street: "Winipeg St.",
+              city: "Regina",
+              zipcode: "S8J 7H3"
+          },
+          src: require('../assets/Carimgs/Vitz.png')
+      },
+      {
+          key: "5",
+          brand: "Mercedes",
+          name: "Van",
+          model: "2019",
+          rate: "120",
+          type: "van",
+          maxspeed: "200 km/h",
+          seats: "4",
+          transmission: "Auto",
+          address: {
+              suite: "4271",
+              street: "Albert St.",
+              city: "Regina",
+              zipcode: "S8R 7P3"
+          },
+          src: require('../assets/Carimgs/vanmerc.png')
+      },
+      {
+          key: "6",
+          brand: "Honda",
+          name: "Accord",
+          model: "2016",
+          rate: "50",
+          type: "sedan",
+          maxspeed: "200 km/h",
+          seats: "4",
+          transmission: "Auto",
+          address: {
+              suite: "8123",
+              street: "Winipeg St.",
+              city: "Regina",
+              zipcode: "S8S 7P2"
+          },
+          src: require('../assets/Carimgs/white.jpeg')
+      },
+      {
+          key: "7",
+          brand: "Porsche",
+          name: "Cayman",
+          model: "GT4",
+          rate: "140",
+          type: "suv",
+          maxspeed: "270 km/h",
+          seats: "4",
+          transmission: "Auto",
+          address: {
+              suite: "8212",
+              street: "Rae St.",
+              city: "Regina",
+              zipcode: "S8J 7H3"
+          },
+          src: require('../assets/Carimgs/porsche.png')
+          
+      },
+      {
+          key: "8",
+          brand: "Toyota",
+          name: "Prado",
+          model: "2022",
+          rate: "130",
+          type: "suv",
+          maxspeed: "230 km/h",
+          seats: "7",
+          transmission: "Auto",
+          address: {
+              suite: "8123",
+              street: "Winipeg St.",
+              city: "Regina",
+              zipcode: "S8J 7H3"
+          },
+          src: require('../assets/Carimgs/black.png')
+      },
+      {
+          key: "9",
+          brand: "Toyota",
+          name: "Corolla",
+          model: "2020",
+          rate: "60",
+          type: "sedan",
+          maxspeed: "220 km/h",
+          seats: "4",
+          transmission: "Auto",
+          address: {
+              suite: "1273",
+              street: "Winipeg",
+              city: "Regina",
+              zipcode: "S8J 7H3"
+          },
+          src: require('../assets/Carimgs/toyotaw.png')
+      },
+      {
+          key: "10",
+          brand: "Hyundai",
+          name: "Santafe",
+          model: "2017",
+          rate: "40",
+          type: "sedan",
+          maxspeed: "220 km/h",
+          seats: "4",
+          transmission: "Auto",
+          address: {
+              suite: "8213",
+              street: "Broad St.",
+              city: "Regina",
+              zipcode: "S1H 7W3"
+          },
+          src: require('../assets/Carimgs/Santafe.png')
+      },
+      {
+          key: "11",
+          brand: "Maggiore",
+          name: "M1",
+          model: "2015",
+          rate: "180",
+          type: "sedan",
+          maxspeed: "250 km/h",
+          seats: "4",
+          transmission: "manual",
+          address: {
+              suite: "1831",
+              street: "ALbert St.",
+              city: "Regina",
+              zipcode: "S8H 7Q3"
+          },
+          src: require('../assets/Carimgs/opel.png')
+      },
+      {
+          key: "12",
+          brand: "Ford",
+          name: "SUV",
+          model: "2019",
+          rate: "160",
+          type: "suv",
+          maxspeed: "280 km/h",
+          seats: "7",
+          transmission: "Auto",
+          address: {
+              suite: "8281",
+              street: "Broad St.",
+              city: "Regina",
+              zipcode: "S1H 7W3"
+          },
+          src: require('../assets/Carimgs/fords.png')
+      },
+      {
+          key: "13",
+          brand: "BMW",
+          name: "",
+          model: "2022",
+          rate: "240",
+          type: "sedan",
+          maxspeed: "290 km/h",
+          seats: "2",
+          transmission: "Auto",
+          address: {
+              suite: "2721",
+              street: "Dewdney Ave",
+              city: "Regina",
+              zipcode: "S1Q 5W3"
+          },
+          src: require('../assets/Carimgs/bmw.png')
+      },
+      {
+          key: "14",
+          brand: "Lambhorghini",
+          name: "Huracan",
+          model: "2020",
+          rate: "340",
+          type: "sedan",
+          maxspeed: "320 km/h",
+          seats: "2",
+          transmission: "Auto",
+          address: {
+              suite: "1923",
+              street: "Gordon Rd.",
+              city: "Regina",
+              zipcode: "S6W 5L3"
+          },
+          src: require('../assets/Carimgs/Lamborghinih.png')
+      },
+      {
+          key: "15",
+          brand: "Toyota",
+          name: "Aqua",
+          model: "2019",
+          rate: "60",
+          type: "sedan",
+          maxspeed: "240 km/h",
+          seats: "4",
+          transmission: "Auto",
+          address: {
+              suite: "2376",
+              street: "Dewdney Ave",
+              city: "Regina",
+              zipcode: "S7H 4K2"
+          },
+          src: require('../assets/Carimgs/aqua.png')
+      },
+      {
+          key: "16",
+          brand: "Nissan",
+          name: "gt",
+          model: "2020",
+          rate: "30",
+          type: "sedan",
+          maxspeed: "200 km/h",
+          seats: "4",
+          transmission: "Auto",
+          address: {
+              suite: "8199",
+              street: "Dewdney Ave",
+              city: "Regina",
+              zipcode: "S7H 4K2"
+          },
+          src: require('../assets/Carimgs/nissan.png')
+      }
+  ]
+  );
 
   const renderItem = ({ item, index, separators }) => (
     <TouchableOpacity onPress={() => navigation.navigate('Product')}>
     <View style={styles.card}>
 
-        <ImageBackground source={item.src} style={styles.carimg}>
-        <Text style={styles.title}>{item.val}</Text>
-
+        <Text style={styles.title}>{item.brand} {item.name}</Text>
+        <Image source={item.src} style={styles.carimg}/>
         <TouchableOpacity style={styles.vbutton}
         onPress={() => navigation.navigate('Product')}>
           <Text style={styles.vbuttontxt}>View</Text>
         </TouchableOpacity>
-        <Text style={styles.rate}>{item.rate}</Text>
-        </ImageBackground>
+        <Text style={styles.rate}>${item.rate}/day</Text>
+
     </View>
     </TouchableOpacity>
   )
@@ -195,7 +478,7 @@ const styles = StyleSheet.create({
     body: {
       flex: 5,
       alignItems:'center',
-      justifyContent:'center',
+      justifyContent:'center'
       // borderWidth:
     },
 
@@ -209,38 +492,36 @@ const styles = StyleSheet.create({
     },
 
     card: {
-      borderRadius: 10,
-      padding: 5,
+      borderRadius: 6,
+      padding: 3,
       margin: 5,
-      alignItems:'center',
-      justifyContent:'center',
-      // width: 195,
-      // height: 185,
-      // borderWidth: 1
+      // borderWidth: 0.2,
+      // alignItems:'center',
+      justifyContent:'center'
     },
 
     title: {
       fontSize: 15,
+      padding: 2,
+      margin: 2
     },
 
     carimg: {
-      // width: 150,
-      // height: 150,
       borderRadius: 10,
-      padding: 5,
-      margin: 5,
+      padding: 2,
+      margin: 2,
       width: 180,
-      height: 180,
+      height: 110,
     },
 
     vbutton: {
-      borderRadius: 7,
+      borderRadius: 6,
       backgroundColor: "#617ee4",
       width: 50,
       height: 20,
       opacity: 0.7,
-      top: 120,
-      left: 5
+      top: 10,
+      left: 10
     },
 
     vbuttontxt: {
@@ -250,8 +531,8 @@ const styles = StyleSheet.create({
     rate: {
       fontSize: 15,
       textAlign:'right',
-      top: 100,
-      right: 5
+      bottom: 10,
+      right: 10
     },
 
     icon: {
