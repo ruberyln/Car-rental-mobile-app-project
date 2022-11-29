@@ -7,9 +7,11 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
+
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import client from '../api/client';
+import { isValidEmail, isValidObjField, updateError } from './methods'
 
 const validationSchema = Yup.object({
   firstName: Yup.string().required('first is required!'),
@@ -17,7 +19,9 @@ const validationSchema = Yup.object({
   email: Yup.string().required('Email is required!'),
   password: Yup.string().required('password is required!'),
 });
-const SignUp = ({navigation}) => {
+
+
+const SignUp = ({ navigation }) => {
   const [userData, setUserData] = useState({
     firstName: '',
     lastName: '',
@@ -26,18 +30,37 @@ const SignUp = ({navigation}) => {
   });
   const [error, setError] = useState('');
 
+
+  const isValidForm = () => {
+    // we will accept only if all of the fields have value
+    if (!isValidObjField(userData))
+      return updateError('Required all fields!', setError);
+    // if valid name with 3 or more characters
+    if (!firstName.trim() || firstName.length < 3)
+      return updateError('Invalid name!', setError);
+    // only valid email id is allowed
+    if (!isValidEmail(email)) return updateError('Invalid email!', setError);
+    // password must have 8 or more characters
+    if (!password.trim() || password.length < 8)
+      return updateError('Password is less then 8 characters!', setError);
+
+
+    return true;
+  };
+
+
   const { firstName, lastName, email, password } = userData;
 
   const handleOnChangeText = (value, fieldName) => {
     setUserData({ ...userData, [fieldName]: value });
   };
 
-  const signUp = async(values, formikActions) => {
+  const signUp = async (values, formikActions) => {
 
-   const res =  await client.post('/signup' ,{
-     ...values
+    const res = await client.post('/signup', {
+      ...values
     });
- navigation.navigate("Welcome");
+    navigation.navigate("Welcome");
     // console.log(values);
   };
 
@@ -57,23 +80,25 @@ const SignUp = ({navigation}) => {
       >
         {({ values, errors, handleBlur, touched, handleChange, handleSubmit }) => {
           // console.log(values);
-          
+
 
           const { firstName, lastName, email, password } = values;
-          return <>
+          return(
+           <>
             <View style={styles.first}>
               <Text style={styles.welcome}>Let's Get You Started ! </Text>
-              {error ? (<Text style={{ color: 'red', fontSize: 16 }}>{error}</Text>)
+          
+            </View>
+            {error ? (<Text style={{ color: 'red', fontSize: 16 }}>{error}</Text>)
                 : null
               }
-            </View>
-
             <View style={styles.inputView}>
               <TextInput
                 style={styles.input}
                 value={firstName}
                 placeholder='Firstname'
-
+                onBlur={handleBlur('firstName')}
+                error={touched.firstName && errors.firstName}
                 autoCapitalize="none"
                 placeholderTextColor="#003f5c"
                 onChangeText={handleChange('firstName')}
@@ -103,6 +128,9 @@ const SignUp = ({navigation}) => {
                 style={styles.input}
                 placeholder='Password'
                 value={password}
+                error={touched.password && errors.password}
+
+                onBlur={handleBlur('password')}
                 secureTextEntry={true}
                 autoCapitalize="none"
                 placeholderTextColor="#003f5c"
@@ -114,7 +142,7 @@ const SignUp = ({navigation}) => {
 
               <Text style={styles.signUpTxt}>Create Account</Text>
             </TouchableOpacity>
-          </>
+          </>)
         }}
 
       </Formik>

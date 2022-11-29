@@ -33,7 +33,7 @@ const Account = ({navigation,route}) => {
             <View style = {{flexDirection:"row",paddingTop:50,}}>
             <Image style= {{flexDirection:"row",paddingTop:15,  width:20, height:20,}}
                             source={require('./src/profile.png')} />
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => navigation.navigate('UserInfo')}>
                      <Text style = {{fontSize:16,}}>
                     Account details 
                 </Text>

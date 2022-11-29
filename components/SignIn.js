@@ -33,7 +33,9 @@ const SignIn = ({ navigation }) => {
 
        
           navigation.navigate("Welcome");
-       
+          console.log(res.data)
+   
+     
 
         
       } catch (error) {
@@ -59,7 +61,7 @@ const SignIn = ({ navigation }) => {
             onChangeText={value => handleOnChangeText(value, 'email')}
           />
         </View>
-   
+  
         <View style={styles.inputView}>
           <TextInput
             style={styles.TextInput}

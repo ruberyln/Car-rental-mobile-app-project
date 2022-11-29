@@ -31,7 +31,9 @@ const GetStarted = ({navigation}) => {
           <Text style={styles.txt}>GET STARTED</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
+        <TouchableOpacity onPress={() => navigation.navigate('SignIn',{
+          screen:"SignIn"
+        })}>
 
           <Text style={styles.forgot_button}>"I already have an account"</Text>
         </TouchableOpacity>

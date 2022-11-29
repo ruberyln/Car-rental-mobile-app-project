@@ -24,6 +24,7 @@ import Cameras from './components/Cameras';
 
 import Account from './components/Account';
 import Email from './components/Email';
+import UserInfo from './components/UserInfo';
 // import Apple from './components/Apple';
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -57,6 +58,7 @@ export default function App() {
         <Stack.Screen name="Calendar" component={Calendar} />
         <Stack.Screen name="Summary" component={Summary} />
         <Stack.Screen name="TranApproved" component={TranApproved} />
+        <Stack.Screen name="UserInfo" component={UserInfo} />
       </Stack.Navigator>
     </NavigationContainer>
       {/* <Product2/> */}
