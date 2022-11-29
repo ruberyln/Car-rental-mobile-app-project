@@ -8,6 +8,7 @@ const TransactionProgress = () => {
        size="large" 
        style={styles.bar}
        />
+       Touch
       <Text style={styles.boldText}>Transaction in Progress</Text>
     </View>
   )

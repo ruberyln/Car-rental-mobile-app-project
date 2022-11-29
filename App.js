@@ -25,6 +25,7 @@ import Cameras from './components/Cameras';
 import Account from './components/Account';
 import Email from './components/Email';
 import UserInfo from './components/UserInfo';
+import TransactionProgress from './components/TransactionProgress';
 // import Apple from './components/Apple';
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -50,6 +51,7 @@ export default function App() {
         <Stack.Screen name="SecurePay" component={SecurePay} />
         <Stack.Screen name="PaymentOptions" component={PaymentOptions} />
         <Stack.Screen name="Map" component={Map} />
+        <Stack.Screen name="TransactionProgress" component={TransactionProgress} />
         <Stack.Screen name="Email" component={Email} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="SignIn" component={SignIn} />

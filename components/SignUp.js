@@ -41,7 +41,11 @@ const SignUp = ({ navigation }) => {
   //   // only valid email id is allowed
   //   if (!isValidEmail(email)) return updateError('Invalid email!', setError);
   //   // password must have 8 or more characters
+
   //   if (!password.trim() || password.length < 3)
+
+  //   if (!password.trim() || password.length < 8)
+
   //     return updateError('Password is less then 8 characters!', setError);
 
 

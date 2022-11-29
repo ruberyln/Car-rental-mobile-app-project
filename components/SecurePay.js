@@ -5,7 +5,9 @@ const SecurePay = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.head}>
-      
+      <TouchableOpacity>
+        <Image source={require("../assets/back.png")} style={styles.back} />
+      </TouchableOpacity>
       <Text style={styles.txt}>Secure Payment</Text>
       <Image source={require("../assets/secure.jpg")} style={styles.Img}></Image>
       </View>
@@ -13,7 +15,7 @@ const SecurePay = ({navigation}) => {
       <View style={styles.body}>
         <View style={styles.card}>
             <Text style={styles.ctxt}>Card Number</Text>
-            <TextInput style={styles.input}  placeholder='1234 5678 4321 0000' />
+            <TextInput style={styles.input} keyboardType='numeric' placeholder='1234 5678 4321 0000' />
             
             <View style={styles.parent}>
             <Text style={styles.datetxt}>Expiry Date</Text>
@@ -21,10 +23,8 @@ const SecurePay = ({navigation}) => {
             </View>
 
             <View style={styles.parent}>
-            <TextInput style={styles.input2} keyboardType='numeric' placeholder='MM/YY' />
+            <TextInput style={styles.input2} keyboardType='default' placeholder='MM/YY' />
             <TextInput style={styles.input2} keyboardType='numeric' placeholder='000' />
-            <TextInput style={styles.input2}  placeholder='MM/YY' />
-            <TextInput style={styles.input2} placeholder='000' />
             </View>
 
         </View>
@@ -33,8 +33,7 @@ const SecurePay = ({navigation}) => {
 
       <View style={styles.footer}>
 
-      <TouchableOpacity style={styles.button} 
-      onPress={() => navigation.navigate('TranApproved')}>
+      <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('TransactionProgress')}>
           <Text style={styles.buttontxt}>Pay Now</Text>
       </TouchableOpacity>
 
@@ -70,20 +69,17 @@ const styles = StyleSheet.create({
         flex: 2,
         backgroundColor: "#fff",
         alignItems:'center',
-        justifyContent:'center',
-
-
+        justifyContent:'center'
     },
 
     card: {
         borderRadius: 15,
-        padding: 15,
+        padding: 10,
         margin: 10,
         backgroundColor: "#fff",
         borderStyle: "solid",
         borderColor: "rgba(0, 0, 0, 0.2)",
         borderWidth: 1,
-       
         // width: 400,
         // height: 300
     },
@@ -96,16 +92,16 @@ const styles = StyleSheet.create({
     },
 
     ctxt: {
-      fontSize: 15,
+      fontSize: 20,
     },
 
     cvtxt: {
-      fontSize: 15,
+      fontSize: 20,
       marginRight: 85
     },
 
     datetxt: {
-      fontSize: 15
+      fontSize: 20
     },
 
     parent: {
@@ -146,10 +142,9 @@ const styles = StyleSheet.create({
     },
   
     buttontxt: {
-      fontSize: 20,
+      fontSize: 30,
       textAlign:'center',
-      color: '#fff',
-      fontWeight:"bold"
+      color: '#fff'
     },
 
     Img: {
