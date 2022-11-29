@@ -207,5 +207,60 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   }
 })
+  // const styles = StyleSheet.create({
+  //   input: {
+  //     // width: 350,
+  //     // height: 55,
+  //     // backgroundColor: '#42A5F5',
+  //     // margin: 10,
+  //     // padding: 8,
+  //     // color: 'white',
+  //     // borderRadius: 14,
+  //     // fontSize: 18,
+  //     // fontWeight: '500',
+  //     height: 50,
+  //     flex: 1,
+  //     padding: 10,
+  //     marginLeft: 20,
+  //   },
+  //   signUpBtn: {
+  //     width: "80%",
+  //     borderRadius: 15,
+  //     height: 50,
+  //     alignItems: "center",
+  //     justifyContent: "center",
+  //     marginTop: 40,
+  //     backgroundColor: "#617EE4",
+  //   },
+  //   signUpTxt: {
+  //     fontSize: 22,
+  //     fontWeight: 'bold',
+  //   },
+  //   inputView: {
+  //     backgroundColor: "#ffffff",
+  //     borderRadius: 10,
+  //     borderWidth: 1,
+  //     width: "80%",
+  //     height: 45,
+  //     marginBottom: 20,
 
-export default SignUp
+  //     alignItems: "center",
+  //   },
+  //   first: {
+  //     paddingBottom: 100,
+  //   },
+  //   welcome: {
+
+  //     fontSize: 32,
+  //     fontWeight: 'bold',
+
+
+  //   },
+  //   container: {
+  //     flex: 1,
+  //     justifyContent: 'center',
+  //     alignItems: 'center'
+  //   }
+  // })
+
+  export default SignUp;

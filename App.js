@@ -43,6 +43,7 @@ export default function App() {
           options={{}}
         />
           <Stack.Screen name="GetStarted" component={GetStarted} />
+          {/* <Stack.Screen name="Google" component={Google} /> */}
           <Stack.Screen name="Cameras" component={Cameras} />
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Display" component={Display} />
