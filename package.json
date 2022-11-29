@@ -36,6 +36,7 @@
     "react-native-phone-call": "^1.2.0",
     "react-native-safe-area-context": "4.4.1",
     "react-native-screens": "~3.18.0",
+    "react-native-search-bar": "^3.5.1",
     "stripe": "^11.1.0",
     "submit-button": "^1.1.5",
     "submit-form": "^2.0.0",
