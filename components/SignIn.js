@@ -10,11 +10,42 @@ import {
   TouchableOpacity,
   Linking,
 } from "react-native";
+import client from '../api/client';
 
 const SignIn = ({ navigation }) => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    // const [email, setEmail] = useState("");
+    // const [password, setPassword] = useState("");
+    const [userInfo, setUserInfo] = useState({
+      email: '',
+      password: '',
+    });
+    const [error, setError] = useState('');
+
+    const { email, password } = userInfo;
+  
+    const handleOnChangeText = (value, fieldName) => {
+      setUserInfo({ ...userInfo, [fieldName]: value });
+    };
    
+    const handleSubmit =async ()=>{
+      try {
+        const res = await client.post('/signin', { ...userInfo });
+
+       
+          navigation.navigate("Welcome");
+          console.log(res.data)
+   
+     
+
+        
+      } catch (error) {
+        console.log(error);
+      }
+
+      
+    };
+
+
     return (
       <View style={styles.container}>
         <View style={styles.first}>
@@ -24,19 +55,21 @@ const SignIn = ({ navigation }) => {
         <View style={styles.inputView}>
           <TextInput
             style={styles.TextInput}
-            placeholder="Email."
+            value={email}
+            placeholder='example@email.com'
             placeholderTextColor="#003f5c"
-            onChangeText={(email) => setEmail(email)}
+            onChangeText={value => handleOnChangeText(value, 'email')}
           />
         </View>
-   
+  
         <View style={styles.inputView}>
           <TextInput
             style={styles.TextInput}
-            placeholder="Password."
+            value={password}            
+            placeholder='********'
             placeholderTextColor="#003f5c"
             secureTextEntry={true}
-            onChangeText={(password) => setPassword(password)}
+            onChangeText={value => handleOnChangeText(value, 'password')}
           />
         </View>
    
@@ -45,7 +78,7 @@ const SignIn = ({ navigation }) => {
           <Text style={styles.forgot_button}>"Don't have an account? Sign Up"</Text>
         </TouchableOpacity>
    
-        <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Display')}>
+        <TouchableOpacity style={styles.loginBtn} onPress={handleSubmit}>
           <Text style = {styles.buttontxt}>Login</Text>
         </TouchableOpacity>
       </View>

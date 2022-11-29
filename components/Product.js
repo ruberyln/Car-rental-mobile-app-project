@@ -5,6 +5,7 @@ import call from 'react-native-phone-call'
 import { Constants,SMS } from "expo";
 import email from 'react-native-email'
 
+import { createOpenLink } from 'react-native-open-maps';
 
 const Product = ({navigation}) => {
 
@@ -115,7 +116,7 @@ const [inputValue, setInputValue] = useState('6395603455');
                     <View style={{ flexDirection: "row", paddingTop:10, }} >
                         <Image style={styles.icons}
                             source={require('./src/location.png')} />
-                            <TouchableOpacity  onPress={() => navigation.navigate('Map')}>
+                            <TouchableOpacity  onPress= {createOpenLink({latitude:50.445210, longitude:-104.618896})}>
                         <Text style={styles.normaltext}> 2409 Dewdney Avenue Regina,SK. </Text>
                         </TouchableOpacity>
                     </View>
