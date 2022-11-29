@@ -31,7 +31,7 @@ const PaymentOptions = ({navigation}) => {
                 <Text style={styles.otxt}>Apple Pay</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('SecurePay')}>
+            <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('Google')}>
                 <Image source={require("../assets/gpay.jpg")} style={styles.logo}></Image>
                 <Text style={styles.otxt}>Google Pay</Text>
             </TouchableOpacity>
