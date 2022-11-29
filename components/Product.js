@@ -8,7 +8,7 @@ import email from 'react-native-email'
 import openMap from 'react-native-open-maps';
 import { Link } from "@react-navigation/native";
 
-const Product = ({navigation}) => {
+const Product = ({navigation, route}) => {
 
     handleEmail = () => {
         const to = ['turbocompany@gmail.com.com', 'contactsupport@email.com'] // string or array of email addresses
@@ -38,12 +38,12 @@ const [inputValue, setInputValue] = useState('6395603455');
         <View style={styles.container}>
 
             <View style={styles.text1}>
-                <Text style={styles.productext}> Ferarri </Text>
+                <Text style={styles.productext}>{route.params.item.brand} {route.params.item.name}</Text>
             </View>
             <View >
 
                 <Image style={styles.images}
-                    source={require('./src/Ferraricar.png')} />
+                    source={route.params.item.src} />
                 {/* <Image style = {styles.dot}
                  source= {require('./dots.png')}/> */}
 
@@ -124,13 +124,13 @@ const [inputValue, setInputValue] = useState('6395603455');
 
                     <View style= {styles.container2}>
 
-                        <Text style={styles.text2}> $180/day </Text>
+                        <Text style={styles.text2}> ${route.params.item.rate}/day </Text>
                   
 
                      <View style = {styles.button}>
                        
                       <TouchableOpacity style ={ styles.box2}
-                      onPress={() => navigation.navigate('Calendar')}>
+                      onPress={() => navigation.navigate('Calendar') }>
 
                        <Text style = {styles.text}> Book Now</Text>
                        </TouchableOpacity>
@@ -157,13 +157,14 @@ const styles =
     StyleSheet.create({
         container:
         {
-            flex: 1,
+            //flex: 1,
+     
             flexDirection: "column",
             alignItems: "flex-start",
         },
         container2:{
             
-            paddingTop: 70,
+            paddingTop: 50,
             flexDirection: "row",
         },
         button: {
@@ -273,13 +274,16 @@ const styles =
         },
         images:
         {
-            width: 378,
-            height: 213,
+            width: 450,
+            height: 300,
+            
+          
         },
         productext:
         {
             fontWeight: 'bold',
             fontSize: 20,
+            marginTop:-80
       
 
         }

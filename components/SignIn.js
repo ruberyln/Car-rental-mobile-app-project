@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
       height: 45,
       marginBottom: 20,
    
-      alignItems: "center",
+      //alignItems: "center",
     },
    
     TextInput: {

@@ -15,7 +15,7 @@ const SecurePay = ({navigation}) => {
       <View style={styles.body}>
         <View style={styles.card}>
             <Text style={styles.ctxt}>Card Number</Text>
-            <TextInput style={styles.input} keyboardType='numeric' placeholder='1234 5678 4321 0000' />
+            <TextInput style={styles.input} keyboardType='default' placeholder='1234 5678 4321 0000' />
             
             <View style={styles.parent}>
             <Text style={styles.datetxt}>Expiry Date</Text>
@@ -24,7 +24,7 @@ const SecurePay = ({navigation}) => {
 
             <View style={styles.parent}>
             <TextInput style={styles.input2} keyboardType='default' placeholder='MM/YY' />
-            <TextInput style={styles.input2} keyboardType='numeric' placeholder='000' />
+            <TextInput style={styles.input2} keyboardType='default' placeholder='000' />
             </View>
 
         </View>

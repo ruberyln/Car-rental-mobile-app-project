@@ -40,7 +40,7 @@ const Display = ({navigation}) => {
               city: "Regina",
               zipcode: "S1H 7W3"
           },
-          src: require('../assets/Carimgs/ferrari.jpeg')
+          src: require('./src/Ferraricar.png')
       },
       {
           key: "3",
@@ -58,7 +58,7 @@ const Display = ({navigation}) => {
               city: "Regina",
               zipcode: "S7S 7S3"
           },
-          src: require('../assets/Carimgs/honda.png')
+          src: require('./src/hondacivic.png')
       },
       {
           key: "4",
@@ -94,7 +94,7 @@ const Display = ({navigation}) => {
               city: "Regina",
               zipcode: "S8R 7P3"
           },
-          src: require('../assets/Carimgs/vanmerc.png')
+          src: require('./src/Van.png')
       },
       {
           key: "6",
@@ -130,7 +130,7 @@ const Display = ({navigation}) => {
               city: "Regina",
               zipcode: "S8J 7H3"
           },
-          src: require('../assets/Carimgs/porsche.png')
+          src: require('./src/porsche.png')
           
       },
       {
@@ -185,7 +185,7 @@ const Display = ({navigation}) => {
               city: "Regina",
               zipcode: "S1H 7W3"
           },
-          src: require('../assets/Carimgs/Santafe.png')
+          src: require('./src/hyundai.png')
       },
       {
           key: "11",
@@ -203,7 +203,7 @@ const Display = ({navigation}) => {
               city: "Regina",
               zipcode: "S8H 7Q3"
           },
-          src: require('../assets/Carimgs/opel.png')
+          src: require('./src/Opel.png')
       },
       {
           key: "12",
@@ -221,7 +221,7 @@ const Display = ({navigation}) => {
               city: "Regina",
               zipcode: "S1H 7W3"
           },
-          src: require('../assets/Carimgs/fords.png')
+          src: require('./src/fordsuv.png')
       },
       {
           key: "13",
@@ -239,7 +239,7 @@ const Display = ({navigation}) => {
               city: "Regina",
               zipcode: "S1Q 5W3"
           },
-          src: require('../assets/Carimgs/bmw.png')
+          src: require('./src/bmw.png')
       },
       {
           key: "14",
@@ -257,7 +257,7 @@ const Display = ({navigation}) => {
               city: "Regina",
               zipcode: "S6W 5L3"
           },
-          src: require('../assets/Carimgs/Lamborghinih.png')
+          src: require('./src/lamborghini.png')
       },
       {
           key: "15",
@@ -275,7 +275,7 @@ const Display = ({navigation}) => {
               city: "Regina",
               zipcode: "S7H 4K2"
           },
-          src: require('../assets/Carimgs/aqua.png')
+          src: require('./src/aqua.png')
       },
       {
           key: "16",
@@ -293,19 +293,19 @@ const Display = ({navigation}) => {
               city: "Regina",
               zipcode: "S7H 4K2"
           },
-          src: require('../assets/Carimgs/nissan.png')
+          src: require('./src/nissan.png')
       }
   ]
   );
 
   const renderItem = ({ item, index, separators }) => (
-    <TouchableOpacity onPress={() => navigation.navigate('Product')}>
+    <TouchableOpacity onPress={() => navigation.navigate('Product',{item})}>
     <View style={styles.card}>
 
         <Text style={styles.title}>{item.brand} {item.name}</Text>
         <Image source={item.src} style={styles.carimg}/>
         <TouchableOpacity style={styles.vbutton}
-        onPress={() => navigation.navigate('Product')}>
+        onPress={() => navigation.navigate('Product', {item})}>
           <Text style={styles.vbuttontxt}>View</Text>
         </TouchableOpacity>
         <Text style={styles.rate}>${item.rate}/day</Text>
@@ -509,7 +509,7 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       padding: 2,
       margin: 2,
-      width: 180,
+      width: 200,
       height: 110,
     },
 

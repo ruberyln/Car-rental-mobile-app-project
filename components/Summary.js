@@ -12,7 +12,7 @@ const Summary = ({navigation,route}) => {
             <Image style= {{flexDirection:"row",paddingTop:15,  width:20, height:20,}}
                             source={require('./src/car.png')} />
                      <Text style = {{fontSize:16,}}>
-                     Car:
+                     Car: 
                 </Text>
             </View>
 
@@ -36,14 +36,14 @@ const Summary = ({navigation,route}) => {
             <Image style= {{flexDirection:"row",paddingTop:15, width:20, height:20,}}
                             source={require('./src/map.png')} />
                      <Text style = {{fontSize:16, }}>
-                     PickUp location:
+                     PickUp location: 2409 Dewdney Avenue, Regina, SK
                 </Text>
             </View>
 
             <View style = {{flexDirection:"row",paddingTop:80,}}>
            
                      <Text style = {{fontSize:30, fontWeight:"bold"}}>
-                    Total:
+                    Total: $150
                 </Text>
             </View>
             <TouchableOpacity style={styles.box2}
