@@ -6,6 +6,8 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
+  KeyboardAvoidingView,
+  Image
 } from 'react-native';
 
 import { Formik } from 'formik';
@@ -77,8 +79,10 @@ const SignUp = ({ navigation }) => {
   // const [firstName, setFirstname] = useState("");
   // const [lastName, setLastName] = useState("");
   return (
-    <View
-      style={styles.container}>
+    <KeyboardAvoidingView
+    style={styles.container}
+    behavior="padding"
+  >
       <Formik initialValues={userData} validationSchema={validationSchema}
         onSubmit={signUp}
       >
@@ -97,10 +101,11 @@ const SignUp = ({ navigation }) => {
                 : null
               }
             <View style={styles.inputView}>
+            <Image source={require("./src/user.png")} style={styles.icon}></Image>
               <TextInput
                 style={styles.input}
                 value={firstName}
-                placeholder='Firstname'
+                placeholder=' First name'
                 onBlur={handleBlur('firstName')}
                 error={touched.firstName && errors.firstName}
                 autoCapitalize="none"
@@ -111,6 +116,7 @@ const SignUp = ({ navigation }) => {
                 : null
               }
             <View style={styles.inputView}>
+            <Image source={require("./src/user.png")} style={styles.icon}></Image>
               <TextInput
                 style={styles.input}
                 value={lastName}
@@ -123,6 +129,7 @@ const SignUp = ({ navigation }) => {
                 : null
               }
               <View style={styles.inputView}>
+              <Image source={require("./src/email.png")} style={styles.icon}></Image>
             
               <TextInput
                 style={styles.input}
@@ -138,6 +145,7 @@ const SignUp = ({ navigation }) => {
                 : null
               }
             <View style={styles.inputView}>
+            <Image source={require("./src/password.png")} style={styles.icon}></Image>
               <TextInput
                 style={styles.input}
                 placeholder='Password'
@@ -161,7 +169,7 @@ const SignUp = ({ navigation }) => {
 
       </Formik>
 
-    </View>
+   </KeyboardAvoidingView>
   )
 }
 const styles = StyleSheet.create({
@@ -195,15 +203,33 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: "bold"
   },
+  icon: {
+    padding: 10,
+    margin: 5,
+    height: 25,
+    width: 25,
+    resizeMode: 'stretch',
+    alignItems: 'center',
+    
+  },
   inputView: {
     backgroundColor: "#ffffff",
     borderRadius: 10,
     borderWidth: 1,
-    width: "70%",
+    width:"80%",
     height: 45,
     marginBottom: 20,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    // backgroundColor: "#ffffff",
+    // borderRadius: 10,
+    // borderWidth: 1,
+    // width: "80%",
+    // height: 45,
+    // marginBottom: 20,
 
-    // alignItems: "center",
+    // // alignItems: "center",
   },
   first: {
     paddingBottom: 100,
@@ -221,60 +247,10 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   }
 })
-  // const styles = StyleSheet.create({
-  //   input: {
-  //     // width: 350,
-  //     // height: 55,
-  //     // backgroundColor: '#42A5F5',
-  //     // margin: 10,
-  //     // padding: 8,
-  //     // color: 'white',
-  //     // borderRadius: 14,
-  //     // fontSize: 18,
-  //     // fontWeight: '500',
-  //     height: 50,
-  //     flex: 1,
-  //     padding: 10,
-  //     marginLeft: 20,
-  //   },
-  //   signUpBtn: {
-  //     width: "80%",
-  //     borderRadius: 15,
-  //     height: 50,
-  //     alignItems: "center",
-  //     justifyContent: "center",
-  //     marginTop: 40,
-  //     backgroundColor: "#617EE4",
-  //   },
-  //   signUpTxt: {
-  //     fontSize: 22,
-  //     fontWeight: 'bold',
-  //   },
-  //   inputView: {
-  //     backgroundColor: "#ffffff",
-  //     borderRadius: 10,
-  //     borderWidth: 1,
-  //     width: "80%",
-  //     height: 45,
-  //     marginBottom: 20,
-
-  //     alignItems: "center",
-  //   },
-  //   first: {
-  //     paddingBottom: 100,
-  //   },
-  //   welcome: {
-
-  //     fontSize: 32,
-  //     fontWeight: 'bold',
 
 
-  //   },
-  //   container: {
-  //     flex: 1,
-  //     justifyContent: 'center',
-  //     alignItems: 'center'
-  //   }
-  // })
+  
+
+
 
   export default SignUp;

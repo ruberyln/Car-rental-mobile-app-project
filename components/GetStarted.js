@@ -78,9 +78,11 @@ const styles = StyleSheet.create({
   },
 
 left:{
+  padding:10,
   flex :2,
   alignItems: "center",
     justifyContent: "center",
+    marginBottom:29
 },
 
   forgot_button: {

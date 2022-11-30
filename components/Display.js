@@ -1,18 +1,19 @@
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity, ImageBackground, ScrollView, FlatList } from 'react-native'
 import React, { useState } from 'react'
 import SearchBar from 'react-native-search-bar';
+import _ from "lodash";
 
 
 
 const Display = ({ navigation }) => {
 
-  // const [search, setSeacrh] = useState('');
+//  const[newData , setNewData] =useState(carList);
 
   const [carList, setcarList] = useState(
     [
       {
         key: "1",
-        brand: "Honda",
+        brand: "honda",
         name: "CRV",
         model: "2021",
         rate: "80",
@@ -30,7 +31,7 @@ const Display = ({ navigation }) => {
       },
       {
         key: "2",
-        brand: "Ferrari",
+        brand: "ferrari",
         name: "F3",
         model: "2020",
         rate: "340",
@@ -45,41 +46,41 @@ const Display = ({ navigation }) => {
           zipcode: "S1H 7W3"
         },
         src: require('../assets/Carimgs/ferrari.jpeg')
-      },{
-          key: "2",
-          brand: "Ferrari",
-          name: "F3",
-          model: "2020",
-          rate: "340",
-          type: "sedan",
-          maxspeed: "350 km/h",
-          seats: "2",
-          transmission: "Auto",
-          address: {
-              suite: "1999",
-              street: "Winipeg St.",
-              city: "Regina",
-              zipcode: "S1H 7W3"
-          },
-          src: require('./src/Ferraricar.png')
+      }, {
+        key: "2",
+        brand: "Ferrari",
+        name: "F3",
+        model: "2020",
+        rate: "340",
+        type: "sedan",
+        maxspeed: "350 km/h",
+        seats: "2",
+        transmission: "Auto",
+        address: {
+          suite: "1999",
+          street: "Winipeg St.",
+          city: "Regina",
+          zipcode: "S1H 7W3"
+        },
+        src: require('./src/Ferraricar.png')
       },
       {
-          key: "3",
-          brand: "Honda",
-          name: "Civic",
-          model: "2017",
-          rate: "70",
-          type: "sedan",
-          maxspeed: "240 km/h",
-          seats: "4",
-          transmission: "Auto",
-          address: {
-              suite: "3478",
-              street: "Broad St.",
-              city: "Regina",
-              zipcode: "S7S 7S3"
-          },
-          src: require('./src/hondacivic.png')
+        key: "3",
+        brand: "Honda",
+        name: "Civic",
+        model: "2017",
+        rate: "70",
+        type: "sedan",
+        maxspeed: "240 km/h",
+        seats: "4",
+        transmission: "Auto",
+        address: {
+          suite: "3478",
+          street: "Broad St.",
+          city: "Regina",
+          zipcode: "S7S 7S3"
+        },
+        src: require('./src/hondacivic.png')
       },
       {
         key: "4",
@@ -100,22 +101,22 @@ const Display = ({ navigation }) => {
         src: require('../assets/Carimgs/Vitz.png')
       },
       {
-          key: "5",
-          brand: "Mercedes",
-          name: "Van",
-          model: "2019",
-          rate: "120",
-          type: "van",
-          maxspeed: "200 km/h",
-          seats: "4",
-          transmission: "Auto",
-          address: {
-              suite: "4271",
-              street: "Albert St.",
-              city: "Regina",
-              zipcode: "S8R 7P3"
-          },
-          src: require('./src/Van.png')
+        key: "5",
+        brand: "Mercedes",
+        name: "Van",
+        model: "2019",
+        rate: "120",
+        type: "van",
+        maxspeed: "200 km/h",
+        seats: "4",
+        transmission: "Auto",
+        address: {
+          suite: "4271",
+          street: "Albert St.",
+          city: "Regina",
+          zipcode: "S8R 7P3"
+        },
+        src: require('./src/Van.png')
       },
       {
         key: "6",
@@ -136,23 +137,23 @@ const Display = ({ navigation }) => {
         src: require('../assets/Carimgs/white.jpeg')
       },
       {
-          key: "7",
-          brand: "Porsche",
-          name: "Cayman",
-          model: "GT4",
-          rate: "140",
-          type: "suv",
-          maxspeed: "270 km/h",
-          seats: "4",
-          transmission: "Auto",
-          address: {
-              suite: "8212",
-              street: "Rae St.",
-              city: "Regina",
-              zipcode: "S8J 7H3"
-          },
-          src: require('./src/porsche.png')
-          
+        key: "7",
+        brand: "Porsche",
+        name: "Cayman",
+        model: "GT4",
+        rate: "140",
+        type: "suv",
+        maxspeed: "270 km/h",
+        seats: "4",
+        transmission: "Auto",
+        address: {
+          suite: "8212",
+          street: "Rae St.",
+          city: "Regina",
+          zipcode: "S8J 7H3"
+        },
+        src: require('./src/porsche.png')
+
       },
       {
         key: "8",
@@ -191,58 +192,58 @@ const Display = ({ navigation }) => {
         src: require('../assets/Carimgs/toyotaw.png')
       },
       {
-          key: "10",
-          brand: "Hyundai",
-          name: "Santafe",
-          model: "2017",
-          rate: "40",
-          type: "sedan",
-          maxspeed: "220 km/h",
-          seats: "4",
-          transmission: "Auto",
-          address: {
-              suite: "8213",
-              street: "Broad St.",
-              city: "Regina",
-              zipcode: "S1H 7W3"
-          },
-          src: require('./src/hyundai.png')
+        key: "10",
+        brand: "Hyundai",
+        name: "Santafe",
+        model: "2017",
+        rate: "40",
+        type: "sedan",
+        maxspeed: "220 km/h",
+        seats: "4",
+        transmission: "Auto",
+        address: {
+          suite: "8213",
+          street: "Broad St.",
+          city: "Regina",
+          zipcode: "S1H 7W3"
+        },
+        src: require('./src/hyundai.png')
       },
       {
-          key: "11",
-          brand: "Maggiore",
-          name: "M1",
-          model: "2015",
-          rate: "180",
-          type: "sedan",
-          maxspeed: "250 km/h",
-          seats: "4",
-          transmission: "manual",
-          address: {
-              suite: "1831",
-              street: "ALbert St.",
-              city: "Regina",
-              zipcode: "S8H 7Q3"
-          },
-          src: require('./src/Opel.png')
+        key: "11",
+        brand: "Maggiore",
+        name: "M1",
+        model: "2015",
+        rate: "180",
+        type: "sedan",
+        maxspeed: "250 km/h",
+        seats: "4",
+        transmission: "manual",
+        address: {
+          suite: "1831",
+          street: "ALbert St.",
+          city: "Regina",
+          zipcode: "S8H 7Q3"
+        },
+        src: require('./src/Opel.png')
       },
       {
-          key: "12",
-          brand: "Ford",
-          name: "SUV",
-          model: "2019",
-          rate: "160",
-          type: "suv",
-          maxspeed: "280 km/h",
-          seats: "7",
-          transmission: "Auto",
-          address: {
-              suite: "8281",
-              street: "Broad St.",
-              city: "Regina",
-              zipcode: "S1H 7W3"
-          },
-          src: require('./src/fordsuv.png')
+        key: "12",
+        brand: "Ford",
+        name: "SUV",
+        model: "2019",
+        rate: "160",
+        type: "suv",
+        maxspeed: "280 km/h",
+        seats: "7",
+        transmission: "Auto",
+        address: {
+          suite: "8281",
+          street: "Broad St.",
+          city: "Regina",
+          zipcode: "S1H 7W3"
+        },
+        src: require('./src/fordsuv.png')
       },
       {
         key: "13",
@@ -319,42 +320,27 @@ const Display = ({ navigation }) => {
     ]
   );
 
-  // const searchFilter = (text) => {
-
-  //   if (text) {
-  //     const newData = masterData.filter((item) => {
-  //       const itemData = item.brand
-  //         ? item.brand.toUpperCase()
-  //         : ''.toUpperCase();
-  //       const textData = text.toUpperCase();
-  //       return itemData.indexOf(textData) > -1;
-
-  //     });
-  //     setFilterdData(newData);
-  //     setSeacrh(text);
-  //   }
-  //   else{
-  //     setFilterdData(masterData);
-  //     setSeacrh(text);
-  //   }
-
-  // }
-
+ 
   const renderItem = ({ item, index, separators }) => (
-    <TouchableOpacity onPress={() => navigation.navigate('Product',{item})}>
-    <View style={styles.card}>
+    <TouchableOpacity onPress={() => navigation.navigate('Product', { item })}>
+      <View style={styles.card}>
 
         <Text style={styles.title}>{item.brand} {item.name}</Text>
+
         <Image source={item.src} style={styles.carimg} />
+
         <TouchableOpacity style={styles.vbutton}
-        onPress={() => navigation.navigate('Product', {item})}>
+          onPress={() => navigation.navigate('Product', { item })}>
           <Text style={styles.vbuttontxt}>View</Text>
         </TouchableOpacity>
+
         <Text style={styles.rate}>${item.rate}/day</Text>
 
       </View>
     </TouchableOpacity>
   )
+
+
 
   return (
 
@@ -367,9 +353,9 @@ const Display = ({ navigation }) => {
           style={styles.input}
           keyboardType='default'
           placeholder='Search'
-          // value={search}
-          // onChangeText={(text) => searchFilter(text)} 
-          />
+        // value={search}
+        //  onChangeText={this.handleSearch} 
+        />
 
         {/* <View style={styles.scroll}>
 
@@ -393,6 +379,7 @@ const Display = ({ navigation }) => {
         {/* <View style={styles.card}> */}
 
         <FlatList
+        keyExtractor={(item,index) =>index.toString()}
           numColumns={2}
           data={carList}
           renderItem={renderItem}
@@ -553,13 +540,13 @@ const styles = StyleSheet.create({
     margin: 2
   },
 
-    carimg: {
-      borderRadius: 10,
-      padding: 2,
-      margin: 2,
-      width: 200,
-      height: 110,
-    },
+  carimg: {
+    borderRadius: 10,
+    padding: 2,
+    margin: 2,
+    width: 200,
+    height: 110,
+  },
 
   vbutton: {
     borderRadius: 6,

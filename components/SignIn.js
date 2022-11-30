@@ -9,6 +9,7 @@ import {
   Button,
   TouchableOpacity,
   Linking,
+  KeyboardAvoidingView 
 } from "react-native";
 import client from '../api/client';
 
@@ -32,7 +33,7 @@ const SignIn = ({ navigation }) => {
         const res = await client.post('/signin', { ...userInfo });
 
        
-          navigation.navigate("Welcome");
+          navigation.navigate("Display");
           console.log(res.data)
    
      
@@ -47,12 +48,19 @@ const SignIn = ({ navigation }) => {
 
 
     return (
-      <View style={styles.container}>
+      // <View style={styles.container}>
+            <KeyboardAvoidingView    style={styles.container}
+            behavior="padding">
+    
+    
         <View style={styles.first}>
-        <Text style={styles.welcome}>Welcome Back</Text>
+        <Text style={styles.welcome}>Welcome Back </Text>
+      
+       
         </View>
         <StatusBar style="auto" />
         <View style={styles.inputView}>
+        <Image source={require("./src/email.png")} style={styles.icon}></Image>
           <TextInput
             style={styles.TextInput}
             value={email}
@@ -63,6 +71,7 @@ const SignIn = ({ navigation }) => {
         </View>
   
         <View style={styles.inputView}>
+        <Image source={require("./src/password.png")} style={styles.icon}></Image>
           <TextInput
             style={styles.TextInput}
             value={password}            
@@ -81,7 +90,8 @@ const SignIn = ({ navigation }) => {
         <TouchableOpacity style={styles.loginBtn} onPress={handleSubmit}>
           <Text style = {styles.buttontxt}>Login</Text>
         </TouchableOpacity>
-      </View>
+        </KeyboardAvoidingView>
+      // </View>
     );
 }
 const styles = StyleSheet.create({
@@ -98,14 +108,22 @@ const styles = StyleSheet.create({
       fontWeight:"bold"
 
     },
-   
+    icon: {
+      padding: 10,
+      margin: 5,
+      height: 25,
+      width: 25,
+      resizeMode: 'stretch',
+      alignItems: 'center',
+      
+    },
     image: {
       marginBottom: 40,
       height:60,
       width:60,
     },
     first:{
-      paddingBottom:100,
+      paddingBottom:80,
     },
    welcome:{
    
@@ -121,6 +139,14 @@ const styles = StyleSheet.create({
       width:"80%",
       height: 45,
       marginBottom: 20,
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+   
+    
+     
+   
+   
    
       //alignItems: "center",
     },
@@ -129,7 +155,8 @@ const styles = StyleSheet.create({
       height: 50,
       flex: 1,
       padding: 10,
-      marginLeft: 20,
+      marginLeft: 10,
+      width:'80%',
     },
    
     forgot_button: {
@@ -138,7 +165,7 @@ const styles = StyleSheet.create({
     },
    
     loginBtn: {
-      width: "80%",
+      width: "60%",
       borderRadius: 25,
       height: 50,
       alignItems: "center",
