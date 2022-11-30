@@ -5,9 +5,7 @@ const SecurePay = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.head}>
-      <TouchableOpacity>
-        <Image source={require("../assets/back.png")} style={styles.back} />
-      </TouchableOpacity>
+    
       <Text style={styles.txt}>Secure Payment</Text>
       <Image source={require("../assets/secure.jpg")} style={styles.Img}></Image>
       </View>
