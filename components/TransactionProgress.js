@@ -1,15 +1,16 @@
-import { StyleSheet, Text, View, ActivityIndicator} from 'react-native'
+import { StyleSheet, Text, View, ActivityIndicator, TouchableOpacity} from 'react-native'
 import React from 'react'
 
-const TransactionProgress = () => {
+const TransactionProgress = ({navigation}) => {
   return (
     <View style={styles.container} >
       <ActivityIndicator
        size="large" 
        style={styles.bar}
        />
-       Touch
+      <TouchableOpacity onPress={() => navigation.navigate('TranApproved')}>
       <Text style={styles.boldText}>Transaction in Progress</Text>
+      </TouchableOpacity>
     </View>
   )
 }

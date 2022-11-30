@@ -12,7 +12,7 @@ const Summary = ({navigation,route}) => {
             <Image style= {{flexDirection:"row",paddingTop:15,  width:20, height:20,}}
                             source={require('./src/car.png')} />
                      <Text style = {{fontSize:16,}}>
-                     Car:
+                     Car: Honda Accord
                 </Text>
             </View>
 
