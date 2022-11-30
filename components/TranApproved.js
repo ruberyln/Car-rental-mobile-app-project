@@ -15,6 +15,8 @@ const TranApproved = ({navigation}) => {
           <Text style={styles.msg}>Transaction  </Text>
           <Text style={styles.msg}>Approved</Text>
           </View> 
+          <Text> Please Check your Email to view order summary and our return policy, </Text>
+          <Text>Thank you for using Turbo</Text>
           <TouchableOpacity style={styles.returnbtn}
           onPress={() => navigation.navigate('Display')}>
           <Text style={styles.buttontxt}>RETURN TO HOME</Text>

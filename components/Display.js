@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity, ImageBackground, ScrollView, FlatList } from 'react-native'
 import React, { useState } from 'react'
 import SearchBar from 'react-native-search-bar';
-import _ from "lodash";
 
 
 
@@ -31,23 +30,6 @@ const Display = ({ navigation }) => {
       },
       {
         key: "2",
-        brand: "ferrari",
-        name: "F3",
-        model: "2020",
-        rate: "340",
-        type: "sedan",
-        maxspeed: "350 km/h",
-        seats: "2",
-        transmission: "Auto",
-        address: {
-          suite: "1999",
-          street: "Winipeg St.",
-          city: "Regina",
-          zipcode: "S1H 7W3"
-        },
-        src: require('../assets/Carimgs/ferrari.jpeg')
-      }, {
-        key: "2",
         brand: "Ferrari",
         name: "F3",
         model: "2020",
@@ -62,7 +44,24 @@ const Display = ({ navigation }) => {
           city: "Regina",
           zipcode: "S1H 7W3"
         },
-        src: require('./src/Ferraricar.png')
+        src: require('../assets/Carimgs/ferrari.jpeg')
+      },{
+          key: "2",
+          brand: "Ferrari",
+          name: "F3",
+          model: "2020",
+          rate: "340",
+          type: "sedan",
+          maxspeed: "350 km/h",
+          seats: "2",
+          transmission: "Auto",
+          address: {
+              suite: "1999",
+              street: "Winipeg St.",
+              city: "Regina",
+              zipcode: "S1H 7W3"
+          },
+          src: require('./src/Ferraricar.png')
       },
       {
         key: "3",

@@ -4,13 +4,16 @@ import {
   Text,
   View,
   Image,
+  TouchableOpacity,
 
 } from "react-native";
 
 const TranProgress = () => {
   return (
-    <View style={styles.container}>
+    <View style={styles.container}> 
+    <TouchableOpacity onPress={() => navigation.navigate('TranApproved')}>
         <Image source={require('./buffering.png') }    style={styles.image}/>
+        </TouchableOpacity>
       <View style={styles.first}>
       <Text style={styles.msg}>Transaction in </Text>
       <Text style={styles.msg}>progress</Text>
