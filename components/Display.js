@@ -31,23 +31,6 @@ const Display = ({ navigation }) => {
       },
       {
         key: "2",
-        brand: "ferrari",
-        name: "F3",
-        model: "2020",
-        rate: "340",
-        type: "sedan",
-        maxspeed: "350 km/h",
-        seats: "2",
-        transmission: "Auto",
-        address: {
-          suite: "1999",
-          street: "Winipeg St.",
-          city: "Regina",
-          zipcode: "S1H 7W3"
-        },
-        src: require('../assets/Carimgs/ferrari.jpeg')
-      }, {
-        key: "2",
         brand: "Ferrari",
         name: "F3",
         model: "2020",
