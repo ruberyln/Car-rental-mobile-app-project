@@ -15,8 +15,12 @@ const TranApproved = ({navigation}) => {
           <Text style={styles.msg}>Transaction  </Text>
           <Text style={styles.msg}>Approved</Text>
           </View> 
-          <Text> Please Check your Email to view order summary and our return policy, </Text>
-          <Text>Thank you for using Turbo</Text>
+
+          <View  style= {styles.txt}>
+          <Text style = {{fontSize:20, paddingTop:10}}> Please Check your Email to view order summary and our return policy </Text>
+          <Text style =  {{fontSize:20, fontWeight:"bold"}}>Thank you for using Turbo</Text>
+          </View>
+
           <TouchableOpacity style={styles.returnbtn}
           onPress={() => navigation.navigate('Display')}>
           <Text style={styles.buttontxt}>RETURN TO HOME</Text>
@@ -60,6 +64,20 @@ const styles = StyleSheet.create({
     fontSize:32,
     fontWeight:'bold',
   
+txt:{
+ alignItems:"center",
+ justifyContent:"center",
+ fontSize:20,
+ fontWeight:"bold"
+
+},
+
+txt1:{
+
+  fontSize:40,
+  fontWeight:"bold"
+ 
+ },
 
     
    },   
