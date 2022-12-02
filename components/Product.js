@@ -118,7 +118,7 @@ const [inputValue, setInputValue] = useState('6395603455');
                         <Image style={styles.icons}
                             source={require('./src/location.png')} />
                             <TouchableOpacity  onPress= {()=>{Linking.openURL("http://maps.apple.com/maps?daar=`37.484847,-122.148386`")}}>
-                        <Text style={styles.normaltext}> 2409 Dewdney Avenue Regina,SK. </Text>
+                        <Text style={styles.normaltext}>4748 Padwick Avenue Regina,SK. </Text>
                         </TouchableOpacity>
                     </View>
 
@@ -130,7 +130,7 @@ const [inputValue, setInputValue] = useState('6395603455');
                      <View style = {styles.button}>
                        
                       <TouchableOpacity style ={ styles.box2}
-                      onPress={() => navigation.navigate('Calendar') }>
+                      onPress={() => navigation.navigate('Calendar' ) }>
 
                        <Text style = {styles.text}> Book Now</Text>
                        </TouchableOpacity>
