@@ -401,7 +401,7 @@ const styles = StyleSheet.create({
 
   vbutton: {
     borderRadius: 6,
-    backgroundColor: "#617ee4",
+    backgroundColor: "#8edcb7",
     width: 50,
     height: 20,
     opacity: 0.7,
