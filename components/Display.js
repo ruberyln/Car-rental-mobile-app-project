@@ -315,7 +315,116 @@ const Display = ({ navigation }) => {
           zipcode: "S7H 4K2"
         },
         src: require('./src/nissan.png')
-      }
+      },
+      {
+        key: "17",
+        brand: "BMW",
+        name: "I8",
+        model: "2012",
+        rate: "380",
+        type: "sedan",
+        maxspeed: "250 km/h",
+        seats: "4",
+        transmission: "manual",
+        address: {
+          suite: "1831",
+          street: "ALbert St.",
+          city: "Regina",
+          zipcode: "S8H 7Q3"
+        },
+        src: require('./src/bmwBlack.png')
+      },
+      {
+        key: "18",
+        brand: "Lamborghini ",
+        name: "Aventador",
+        model: "2019",
+        rate: "360",
+        type: "suv",
+        maxspeed: "280 km/h",
+        seats: "7",
+        transmission: "Auto",
+        address: {
+          suite: "8281",
+          street: "Broad St.",
+          city: "Regina",
+          zipcode: "S1H 7W3"
+        },
+        src: require('./src/blue.png')
+      },
+      {
+        key: "19",
+        brand: " Lamborghini ",
+        name: "",
+        model: "2022",
+        rate: "340",
+        type: "sedan",
+        maxspeed: "290 km/h",
+        seats: "2",
+        transmission: "Auto",
+        address: {
+          suite: "2721",
+          street: "Dewdney Ave",
+          city: "Regina",
+          zipcode: "S1Q 5W3"
+        },
+        src: require('./src/labWhite.png')
+      },
+      {
+        key: "20",
+        brand: "Mercedes",
+        name: "G Wagon",
+        model: "2016",
+        rate: "50",
+        type: "sedan",
+        maxspeed: "200 km/h",
+        seats: "4",
+        transmission: "Auto",
+        address: {
+          suite: "8123",
+          street: "Winipeg St.",
+          city: "Regina",
+          zipcode: "S8S 7P2"
+        },
+        src: require('./src/merceF.png')
+      },
+    
+      {
+        key: "21",
+        brand: "Kia",
+        name: "Telluride",
+        model: "2022",
+        rate: "130",
+        type: "suv",
+        maxspeed: "230 km/h",
+        seats: "7",
+        transmission: "Auto",
+        address: {
+          suite: "8123",
+          street: "Winipeg St.",
+          city: "Regina",
+          zipcode: "S8J 7H3"
+        },
+        src: require('./src/kia.png')
+      },
+      {
+        key: "22",
+        brand: "Toyota",
+        name: "Corolla",
+        model: "2020",
+        rate: "60",
+        type: "sedan",
+        maxspeed: "220 km/h",
+        seats: "4",
+        transmission: "Auto",
+        address: {
+          suite: "1273",
+          street: "Winipeg",
+          city: "Regina",
+          zipcode: "S8J 7H3"
+        },
+        src: require('../assets/Carimgs/toyotaw.png')
+      },
     ]
   );
 
@@ -356,21 +465,30 @@ const Display = ({ navigation }) => {
         //  onChangeText={this.handleSearch} 
         />
 
-        {/* <View style={styles.scroll}>
+        <View style={styles.scroll}>
 
       <View style={styles.rect1}>
+      <TouchableOpacity 
+          onPress={() => navigation.navigate('Family')}>
       <Text style={styles.txt}>Family brands</Text>
+      </TouchableOpacity>
       </View>
 
       <View style={styles.rect2}>
+      <TouchableOpacity 
+          onPress={() => navigation.navigate('Luxury')}>
       <Text style={styles.txt}>Luxury brands</Text>
+      </TouchableOpacity>
       </View>
 
       <View style={styles.rect3}>
+      <TouchableOpacity 
+          onPress={() => navigation.navigate('Popular')}>
         <Text style={styles.txt}>Popular brands</Text>
+        </TouchableOpacity>
       </View>
 
-      </View> */}
+      </View>
       </View>
 
       <View style={styles.body}>

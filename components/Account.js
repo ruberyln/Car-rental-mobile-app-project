@@ -28,7 +28,7 @@ const Account = ({navigation,route}) => {
 
      return (
         <View style= {styles.container}>
-            <Text style = {styles.text}> Hello User</Text>
+            {/* <Text style = {styles.text}> Hello User</Text> */}
          <View style={styles.box}>
             <View style = {{flexDirection:"row",paddingTop:50,}}>
             <Image style= {{flexDirection:"row",paddingTop:15,  width:20, height:20,}}

@@ -70,7 +70,7 @@ const [inputValue, setInputValue] = useState('6395603455');
                         <Image style={styles.icons}
                             source={require('./src/speed.png')} />
 
-                        <Text style={styles.text3}> 200km/h</Text>
+                        <Text style={styles.text3}> {route.params.item.maxspeed}</Text>
                     </View>
 
 
@@ -79,7 +79,7 @@ const [inputValue, setInputValue] = useState('6395603455');
                         <Image style={styles.icons}
                             source={require('./src/2.png')} />
 
-                        <Text style={styles.text3}>4 Seater</Text>
+                        <Text style={styles.text3}>{route.params.item.seats} Seater</Text>
                     </View>
 
                     <View style={styles.box}>
@@ -118,7 +118,7 @@ const [inputValue, setInputValue] = useState('6395603455');
                         <Image style={styles.icons}
                             source={require('./src/location.png')} />
                             <TouchableOpacity  onPress= {()=>{Linking.openURL("http://maps.apple.com/maps?daar=`37.484847,-122.148386`")}}>
-                        <Text style={styles.normaltext}> 2409 Dewdney Avenue Regina,SK. </Text>
+                        <Text style={styles.normaltext}> 4749 Padwick Avenue Regina,SK. </Text>
                         </TouchableOpacity>
                     </View>
 

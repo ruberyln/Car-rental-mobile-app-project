@@ -7,7 +7,7 @@ const Welcome = ({ navigation }) => {
 
     <View style={styles.container}>
 
-      <Text style={styles.boldText}>Welcome Taylor,</Text>
+      <Text style={styles.boldText}>Welcome To Turbo</Text>
 
       <View style={styles.body}>
 

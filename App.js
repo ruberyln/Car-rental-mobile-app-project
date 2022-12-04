@@ -7,6 +7,9 @@ import Calendar from './components/Calendar';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Welcome from './components/Welcome';
+import Family from './components/Family';
+import Luxury from './components/Luxury';
+import Popular from './components/Popular';
 
 import { NavigationContainer } from '@react-navigation/native';
 import Map from './components/Map';
@@ -62,6 +65,9 @@ export default function App() {
         <Stack.Screen name="Summary" component={Summary} />
         <Stack.Screen name="TranApproved" component={TranApproved} />
         <Stack.Screen name="UserInfo" component={UserInfo} />
+        <Stack.Screen name="Family" component={Family} />
+        <Stack.Screen name="Luxury" component={Luxury} />
+        <Stack.Screen name="Popular" component={Popular} />
       </Stack.Navigator>
     </NavigationContainer>
       {/* <Product2/> */}

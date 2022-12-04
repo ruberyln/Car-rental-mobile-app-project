@@ -14,6 +14,8 @@ import {
 import client from '../api/client';
 
 const SignIn = ({ navigation }) => {
+
+  
     // const [email, setEmail] = useState("");
     // const [password, setPassword] = useState("");
     const [userInfo, setUserInfo] = useState({

@@ -36,7 +36,7 @@ const Summary = ({navigation,route}) => {
             <Image style= {{flexDirection:"row",paddingTop:15, width:20, height:20,}}
                             source={require('./src/map.png')} />
                      <Text style = {{fontSize:16, }}>
-                     PickUp location: 2409 Dewdney Avenue, Regina, SK
+                     PickUp location: 4749 Padwick Avenue, Regina, SK
                 </Text>
             </View>
 
