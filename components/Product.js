@@ -130,7 +130,7 @@ const [inputValue, setInputValue] = useState('6395603455');
                      <View style = {styles.button}>
                        
                       <TouchableOpacity style ={ styles.box2}
-                      onPress={() => navigation.navigate('Calendar') }>
+                      onPress={() => navigation.navigate('Calendar' ) }>
 
                        <Text style = {styles.text}> Book Now</Text>
                        </TouchableOpacity>
