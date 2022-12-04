@@ -14,13 +14,19 @@ const Welcome = ({ navigation }) => {
         <Text style={styles.Text1}>Where to begin</Text>
         
         <View style={styles.rectangleView}>
+        <TouchableOpacity 
+        onPress={() => navigation.navigate('Display')} >
         <Image source={require("../assets/pageview.png")} style={styles.Img}></Image>
         <Text style={styles.Text}>Browse</Text>
+        </TouchableOpacity>
         </View>
 
         <View style={styles.rectangleView2}>
+        <TouchableOpacity 
+        onPress={() => navigation.navigate('Display')} >
         <Image source={require("../assets/car_rent.png")} style={styles.Img}></Image>
         <Text style={styles.Text}>Select</Text>
+        </TouchableOpacity>
         </View>
 
         <View style={styles.rectangleView3}>
