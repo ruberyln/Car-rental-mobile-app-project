@@ -7,7 +7,7 @@ const Welcome = ({ navigation }) => {
 
     <View style={styles.container}>
 
-      <Text style={styles.boldText}>Welcome to the Turbo App,</Text>
+      <Text style={styles.boldText}>Welcome to Turbo,</Text>
 
       <View style={styles.body}>
 
