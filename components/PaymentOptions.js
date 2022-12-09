@@ -26,16 +26,18 @@ const PaymentOptions = ({navigation}) => {
                 <Text style={styles.otxt}>Visa Credit Card</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('Apple')}>
+            {/* <TouchableOpacity style={styles.options} 
+            // onPress={() => navigation.navigate('Apple')}
+            >
                 <Image source={require("../assets/apay.png")} style={styles.logo}></Image>
                 <Text style={styles.otxt}>Apple Pay</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
-            <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('SecurePay')}>
-            {/* <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('Google')}> */}
+            {/* <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('SecurePay')}>
+            <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('Google')}>
                 <Image source={require("../assets/gpay.jpg")} style={styles.logo}></Image>
                 <Text style={styles.otxt}>Google Pay</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             </View>
         </View>
       
